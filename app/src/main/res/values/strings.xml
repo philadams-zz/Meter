@@ -8,7 +8,7 @@
 
   <string name="button_submit_response">Submit</string>
 
-  <string name="vas_prompt">This is a quick intro to VAS</string>
+  <string name="vas_prompt">Please indicate your pain level with the following seek bar:</string>
   <string name="vas_anchor_low">No pain at all</string>
   <string name="vas_anchor_high">Worst pain imaginable</string>
 

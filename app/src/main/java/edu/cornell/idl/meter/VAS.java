@@ -7,9 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-// TODO:phil usability submit button bigger
-// TODO:phil usability prompt styles
-// TODO:phil usability anchor styles
 public class VAS extends Activity {
 
   final static String TAG = "VAS";

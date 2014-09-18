@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="MeterTheme" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+    <item name="android:textViewStyle">@style/MyTextView</item>
+  </style>
+  <style name="MyTextView" parent="android:Widget.TextView">
+    <item name="android:textSize">18sp</item>
+  </style>
+</resources>

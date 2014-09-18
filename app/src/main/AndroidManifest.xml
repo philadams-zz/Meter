@@ -20,7 +20,7 @@
     <activity
         android:name="edu.cornell.idl.meter.VAS"
         android:label="@string/title_activity_vas"
-        android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        android:theme="@style/MeterTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.DEFAULT" />

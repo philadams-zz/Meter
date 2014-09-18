@@ -13,18 +13,19 @@
       android:text="@string/vas_prompt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_gravity="center"/>
+      android:textStyle="italic"/>
 
   <TextView
       android:text="@string/vas_anchor_high"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="@dimen/activity_horizontal_margin"/>
 
   <RelativeLayout
       android:layout_width="fill_parent"
       android:layout_height="0dp"
-      android:layout_weight="1"
-      android:layout_gravity="center">
+      android:layout_weight="1">
 
     <edu.cornell.idl.meter.VerticalSeekBar
         android:id="@+id/verticalseekbar"
@@ -39,12 +40,13 @@
       android:text="@string/vas_anchor_low"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_gravity="center"/>
+      android:layout_gravity="center"
+      android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
   <Button
       android:id="@+id/vas_button_submit"
       android:text="@string/button_submit_response"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="center"/>
 
