@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="app_name">Meter</string>
+
+  <string name="meter_intro">This is the Meter.app intro</string>
+  <string name="action_vas">VAS</string>
+
+  <string name="button_submit_response">Submit</string>
+
+  <string name="vas_prompt">This is a quick intro to VAS</string>
+  <string name="vas_anchor_low">No pain at all</string>
+  <string name="vas_anchor_high">Worst pain imaginable</string>
+
+  <string name="title_activity_vas">VAS</string>
+  <string name="hello_world">Hello world!</string>
+  <string name="title_activity_meter">Meter</string>
+
+</resources>
