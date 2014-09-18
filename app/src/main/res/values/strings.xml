@@ -4,6 +4,7 @@
   <string name="app_name">Meter</string>
 
   <string name="meter_intro">This is the Meter.app intro</string>
+  <string name="action_meter_one">MeterOne (VAS)</string>
   <string name="action_vas">VAS</string>
   <string name="action_nrs">NRS</string>
 

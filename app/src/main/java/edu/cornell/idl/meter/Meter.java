@@ -10,8 +10,9 @@ import android.widget.Toast;
 public class Meter extends Activity {
 
   static final String OHMAGE_SCORE = "score";
-  static final int LAUNCH_VAS = 1;
-  static final int LAUNCH_NRS = 2;
+  static final int LAUNCH_METER_ONE = 1;
+  static final int LAUNCH_VAS = 11;
+  static final int LAUNCH_NRS = 12;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,9 @@ public class Meter extends Activity {
     // automatically handle clicks on the Home/Up button, so long
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
+    if (id == R.id.action_meter_one) {
+      startActivityForResult(new Intent(this, MeterOne.class), Meter.LAUNCH_METER_ONE);
+    }
     if (id == R.id.action_vas) {
       startActivityForResult(new Intent(this, VAS.class), Meter.LAUNCH_VAS);
     }

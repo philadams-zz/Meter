@@ -1,6 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.cornell.idl.meter.Meter" >
+  <item android:id="@+id/action_meter_one"
+      android:title="@string/action_meter_one"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
     <item android:id="@+id/action_vas"
         android:title="@string/action_vas"
         android:orderInCategory="100"
