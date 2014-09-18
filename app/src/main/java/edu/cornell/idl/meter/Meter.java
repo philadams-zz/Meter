@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class Meter extends Activity {
 
-  static final int VAS_LAUNCH = 1;
+  static final String OHMAGE_SCORE = "score";
+  static final int LAUNCH_VAS = 1;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +33,17 @@ public class Meter extends Activity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_vas) {
-      startActivityForResult(new Intent(this, VAS.class), Meter.VAS_LAUNCH);
+      startActivityForResult(new Intent(this, VAS.class), Meter.LAUNCH_VAS);
     }
     return super.onOptionsItemSelected(item);
   }
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (resultCode == RESULT_OK) {
+      float reportedPainLevel = data.getFloatExtra(Meter.OHMAGE_SCORE, -1);
+      Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel), Toast.LENGTH_SHORT).show();
+    }
+    //if (requestCode == Meter.LAUNCH_VAS) {}
   }
 }

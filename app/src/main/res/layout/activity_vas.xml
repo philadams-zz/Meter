@@ -27,6 +27,7 @@
       android:layout_gravity="center">
 
     <edu.cornell.idl.meter.VerticalSeekBar
+        android:id="@+id/verticalseekbar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:progress="50"
@@ -41,6 +42,7 @@
       android:layout_gravity="center"/>
 
   <Button
+      android:id="@+id/vas_button_submit"
       android:text="@string/button_submit_response"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
