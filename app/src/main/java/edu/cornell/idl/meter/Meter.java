@@ -11,6 +11,7 @@ public class Meter extends Activity {
 
   static final String OHMAGE_SCORE = "score";
   static final int LAUNCH_VAS = 1;
+  static final int LAUNCH_NRS = 2;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,9 @@ public class Meter extends Activity {
     int id = item.getItemId();
     if (id == R.id.action_vas) {
       startActivityForResult(new Intent(this, VAS.class), Meter.LAUNCH_VAS);
+    }
+    if (id == R.id.action_nrs) {
+      startActivityForResult(new Intent(this, NRS.class), Meter.LAUNCH_NRS);
     }
     return super.onOptionsItemSelected(item);
   }

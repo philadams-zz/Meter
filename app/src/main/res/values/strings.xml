@@ -5,6 +5,7 @@
 
   <string name="meter_intro">This is the Meter.app intro</string>
   <string name="action_vas">VAS</string>
+  <string name="action_nrs">NRS</string>
 
   <string name="button_submit_response">Submit</string>
 
@@ -12,7 +13,9 @@
   <string name="vas_anchor_low">No pain at all</string>
   <string name="vas_anchor_high">Worst pain imaginable</string>
 
-  <string name="title_activity_vas">VAS</string>
+  <string name="nrs_prompt">Please indicate your pain level with the following NRS:</string>
+
+  <string name="title_activity_default">Meter meter</string>
   <string name="hello_world">Hello world!</string>
   <string name="title_activity_meter">Meter</string>
 
