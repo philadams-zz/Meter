@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class NRS extends Activity {
+public class NRSActivity extends Activity {
 
-  final static String TAG = "NRS";
+  final static String TAG = "NRSActivity";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +23,12 @@ public class NRS extends Activity {
       @Override public void onClick(View view) {
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.nrs_radiogroup);
         int selectedRadioButton = radioGroup.getCheckedRadioButtonId();
-        float reportedValue = Float.parseFloat(((RadioButton) findViewById(selectedRadioButton)).getText().toString());
+        float reportedValue = Float.parseFloat(
+            ((RadioButton) findViewById(selectedRadioButton)).getText().toString());
 
         Log.d(TAG, String.format("reported value: %.0f/11", reportedValue));
         Intent result = new Intent();
-        result.putExtra(Meter.OHMAGE_SCORE, reportedValue);
+        result.putExtra(MeterActivity.OHMAGE_SCORE, reportedValue);
         setResult(RESULT_OK, result);
         finish();
       }

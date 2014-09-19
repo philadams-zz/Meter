@@ -9,7 +9,7 @@
       android:theme="@style/AppTheme" >
 
     <activity
-        android:name="edu.cornell.idl.meter.Meter"
+        android:name=".MeterActivity"
         android:label="@string/title_activity_meter">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -18,7 +18,7 @@
     </activity>
 
     <activity
-        android:name="edu.cornell.idl.meter.MeterOne"
+        android:name=".MeterOneActivity"
         android:label="@string/title_activity_default"
         android:theme="@style/MeterTheme">
       <intent-filter>
@@ -28,7 +28,7 @@
     </activity>
 
     <activity
-        android:name="edu.cornell.idl.meter.VAS"
+        android:name=".VASActivity"
         android:label="@string/title_activity_default"
         android:theme="@style/MeterTheme">
       <intent-filter>
@@ -38,7 +38,7 @@
     </activity>
 
     <activity
-        android:name="edu.cornell.idl.meter.NRS"
+        android:name=".NRSActivity"
         android:label="@string/title_activity_default"
         android:theme="@style/MeterTheme">
       <intent-filter>

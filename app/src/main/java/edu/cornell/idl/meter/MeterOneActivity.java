@@ -7,9 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MeterOne extends Activity {
+public class MeterOneActivity extends Activity {
 
-  final static String TAG = "VAS";
+  final static String TAG = "VASActivity";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class MeterOne extends Activity {
 
         Log.d(TAG, String.format("reported value: %.0f/100", reportedValue));
         Intent result = new Intent();
-        result.putExtra(Meter.OHMAGE_SCORE, reportedValue);
+        result.putExtra(MeterActivity.OHMAGE_SCORE, reportedValue);
         setResult(RESULT_OK, result);
         finish();
       }
