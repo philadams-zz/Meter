@@ -3,7 +3,7 @@
 
   <string name="app_name">Meter</string>
 
-  <string name="meter_intro">This is the Meter.app intro</string>
+  <string name="meter_intro">This is Meter.\n\nMeter\'s various meters (tap the options menu) are usually intended to be called from a remote activity in an ESM app like Ohmage.\n\nMeter is a project by Phil Adams (philadams.net).</string>
   <string name="action_meter_one">MeterOne (VAS)</string>
   <string name="action_vas">VAS</string>
   <string name="action_nrs">NRS</string>
