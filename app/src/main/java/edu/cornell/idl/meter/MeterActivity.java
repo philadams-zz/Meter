@@ -9,11 +9,13 @@ import android.widget.Toast;
 
 public class MeterActivity extends Activity {
 
+  static final String TAG = "MeterActivity";
   static final String OHMAGE_SCORE = "score";
   static final int LAUNCH_METER_ONE = 1;
   static final int LAUNCH_VAS = 11;
   static final int LAUNCH_NRS = 12;
   static final int LAUNCH_SUURETA = 13;
+  static final int LAUNCH_SUPER_VAS = 14;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,9 @@ public class MeterActivity extends Activity {
     }
     if (id == R.id.action_suureta) {
       startActivityForResult(new Intent(this, SuuretaActivity.class), MeterActivity.LAUNCH_SUURETA);
+    }
+    if (id == R.id.action_super_vas) {
+      startActivityForResult(new Intent(this, SuperVASActivity.class), MeterActivity.LAUNCH_SUPER_VAS);
     }
     return super.onOptionsItemSelected(item);
   }

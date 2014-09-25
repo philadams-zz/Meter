@@ -17,4 +17,8 @@
       android:title="@string/action_suureta"
       android:orderInCategory="100"
       android:showAsAction="never" />
+  <item android:id="@+id/action_super_vas"
+      android:title="@string/action_super_vas"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
 </menu>

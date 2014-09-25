@@ -13,7 +13,7 @@ import android.view.View;
 /**
  * A circle for the Suureta meter that grows when the screen is touched.
  */
-public class SuuretaCircleView extends View {
+public class SuuretaView extends View {
   private final int paintColor = Color.BLACK;
   private final int refreshRate = 5;  // smaller values grow suureta more quickly
   private Paint paint;
@@ -21,7 +21,7 @@ public class SuuretaCircleView extends View {
   private Handler mHandler;
   private Runnable mGrow;
 
-  public SuuretaCircleView(Context context, AttributeSet attrs) {
+  public SuuretaView(Context context, AttributeSet attrs) {
     super(context, attrs);
     setFocusable(true);
     setFocusableInTouchMode(true);

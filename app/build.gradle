@@ -5,7 +5,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "idl.cornell.edu.meter"
+        applicationId "edu.cornell.idl.meter"
         minSdkVersion 14
         targetSdkVersion 20
         versionCode 1

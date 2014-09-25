@@ -7,24 +7,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-// TODO:phil make circle stop growing at some max value
-// TODO:phil make a reset button. or have two fingers shrink it.
-public class SuuretaActivity extends Activity {
+public class SuperVASActivity extends Activity {
 
-  final static String TAG = "SuuretaActivity";
+  final static String TAG = "SuperVASActivity";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_suureta);
+    setContentView(R.layout.activity_super_vas);
 
-    Button submitButton = (Button) findViewById(R.id.suureta_button_submit);
+    Button submitButton = (Button) findViewById(R.id.super_vas_button_submit);
     submitButton.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
-        SuuretaView circleView = (SuuretaView) findViewById(R.id.suureta_circle_view);
-        float reportedValue = (float) circleView.getRadius();
+        SuperVASView superVAS = (SuperVASView) findViewById(R.id.super_vas_view);
+        float reportedValue = (float) superVAS.getProgress();
 
-        Log.d(TAG, String.format("reported value: %.0f/???", reportedValue));
+        Log.d(TAG, String.format("reported value: %.0f/100", reportedValue));
         Intent result = new Intent();
         result.putExtra(MeterActivity.OHMAGE_SCORE, reportedValue);
         setResult(RESULT_OK, result);
