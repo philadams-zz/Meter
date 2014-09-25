@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * TODO force user to do *something* and not submit null results...
+ */
 public abstract class MeterBaseActivity extends Activity {
 
   final static String TAG = "MeterBaseActivity";

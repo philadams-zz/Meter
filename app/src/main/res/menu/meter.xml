@@ -21,4 +21,8 @@
       android:title="@string/action_super_vas"
       android:orderInCategory="100"
       android:showAsAction="never" />
+  <item android:id="@+id/action_pam"
+      android:title="@string/action_pam"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
 </menu>

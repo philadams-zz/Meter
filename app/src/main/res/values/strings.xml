@@ -9,6 +9,7 @@
   <string name="action_nrs">NRS</string>
   <string name="action_suureta">Suureta</string>
   <string name="action_super_vas">SuperVAS</string>
+  <string name="action_pam">PAM</string>
 
   <string name="button_submit_response">Submit</string>
 
@@ -21,6 +22,9 @@
   <string name="suureta_prompt">Please tap-and-hold the screen to report your pain level:</string>
 
   <string name="super_vas_prompt">Please indicate your pain level with the following super seek bar:</string>
+
+  <string name="pam_prompt">PAM prompt goes here...</string>
+  <string name="pam_more_images">More images</string>
 
   <string name="title_activity_default">Meter meter</string>
   <string name="hello_world">Hello world!</string>
