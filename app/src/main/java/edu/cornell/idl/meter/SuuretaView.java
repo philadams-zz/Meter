@@ -90,7 +90,7 @@ public class SuuretaView extends View {
     setMeasuredDimension(100, 100);
   }
 
-  public int getRadius() {
+  public int getProgress() {
     return this.radius;
   }
 }

@@ -28,7 +28,7 @@
       android:layout_weight="1">
 
     <edu.cornell.idl.meter.VerticalSeekBar
-        android:id="@+id/verticalseekbar"
+        android:id="@+id/vas_vertical_seek_bar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:progress="50"
@@ -44,7 +44,7 @@
       android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
   <Button
-      android:id="@+id/vas_button_submit"
+      android:id="@+id/submit_button"
       android:text="@string/button_submit_response"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

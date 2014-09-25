@@ -108,7 +108,7 @@
       android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
   <Button
-      android:id="@+id/nrs_button_submit"
+      android:id="@+id/submit_button"
       android:text="@string/button_submit_response"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

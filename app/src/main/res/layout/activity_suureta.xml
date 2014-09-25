@@ -21,7 +21,7 @@
       android:layout_weight="1">
 
     <edu.cornell.idl.meter.SuuretaView
-        android:id="@+id/suureta_circle_view"
+        android:id="@+id/suureta_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -33,7 +33,7 @@
   </RelativeLayout>
 
   <Button
-      android:id="@+id/suureta_button_submit"
+      android:id="@+id/submit_button"
       android:text="@string/button_submit_response"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
