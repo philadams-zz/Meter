@@ -37,11 +37,6 @@
         android:orientation="vertical"
         android:layout_centerInParent="true">
       <RadioButton
-          android:id="@+id/nrs_11"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="11"/>
-      <RadioButton
           android:id="@+id/nrs_10"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
