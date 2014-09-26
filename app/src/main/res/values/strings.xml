@@ -3,13 +3,15 @@
 
   <string name="app_name">Meter</string>
 
-  <string name="meter_intro">This is Meter.\n\nMeter\'s various meters (tap the options menu) are usually intended to be called from a remote activity in an ESM app like Ohmage.\n\nMeter is a project by Phil Adams (philadams.net).</string>
+  <string name="meter_intro">This is Meter.\n\nMeter\'s various meters (tap the options menu) are usually intended to be called from a remote activity in an ESM app like Ohmage.\n\nMeter is a project by Phil Adams (philadams.net) and the Interaction Design Lab (idl.cornell.edu).</string>
   <string name="action_meter_one">MeterOne (VAS)</string>
   <string name="action_vas">VAS</string>
   <string name="action_nrs">NRS</string>
   <string name="action_suureta">Suureta</string>
   <string name="action_super_vas">SuperVAS</string>
   <string name="action_pam">PAM</string>
+  <string name="action_many_fingers">ManyFingers</string>
+  <string name="action_tap_tap">TapTap</string>
 
   <string name="button_submit_response">Submit</string>
 
@@ -25,6 +27,10 @@
 
   <string name="pam_prompt">PAM prompt goes here...</string>
   <string name="pam_more_images">More images</string>
+
+  <string name="many_fingers_prompt">Touch the screen with 1..5 fingers to report your pain intensity level (5 = worst pain ever).</string>
+
+  <string name="tap_tap_prompt">Tap the screen to increment your reported pain intensity (0 is no pain, 10 is the worst pain ever).</string>
 
   <string name="title_activity_default">Meter meter</string>
   <string name="hello_world">Hello world!</string>

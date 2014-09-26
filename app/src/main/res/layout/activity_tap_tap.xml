@@ -7,10 +7,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="edu.cornell.idl.meter.SuuretaActivity">
+    tools:context="edu.cornell.idl.meter.TapTapActivity">
 
   <TextView
-      android:text="@string/suureta_prompt"
+      android:text="@string/tap_tap_prompt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:textStyle="italic"/>
@@ -20,15 +20,12 @@
       android:layout_height="0dp"
       android:layout_weight="1">
 
-    <edu.cornell.idl.meter.SuuretaView
-        android:id="@+id/suureta_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"/>
+    <edu.cornell.idl.meter.TapTapView
+        android:id="@+id/tap_tap_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:progress="2"
+        android:layout_centerInParent="true"/>
 
   </RelativeLayout>
 

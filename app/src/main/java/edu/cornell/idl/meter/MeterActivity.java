@@ -17,6 +17,8 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_SUURETA = 13;
   static final int LAUNCH_SUPER_VAS = 14;
   static final int LAUNCH_PAM = 15;
+  static final int LAUNCH_MANY_FINGERS = 16;
+  static final int LAUNCH_TAP_TAP = 17;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,12 @@ public class MeterActivity extends Activity {
     }
     if (id == R.id.action_pam) {
       startActivityForResult(new Intent(this, PAMActivity.class), MeterActivity.LAUNCH_PAM);
+    }
+    if (id == R.id.action_many_fingers) {
+      startActivityForResult(new Intent(this, ManyFingersActivity.class), MeterActivity.LAUNCH_MANY_FINGERS);
+    }
+    if (id == R.id.action_tap_tap) {
+      startActivityForResult(new Intent(this, TapTapActivity.class), MeterActivity.LAUNCH_TAP_TAP);
     }
     return super.onOptionsItemSelected(item);
   }
