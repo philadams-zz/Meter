@@ -17,11 +17,16 @@ public class SuperVASView extends View {
 
   final static String TAG = "SuperVASView";
 
-  private Paint sideScalePaint;
+  private Paint scalePaint;
 
-  private float sideScaleX = 0.05f;
-  private float sideScaleY1 = 0.05f;
-  private float sideScaleY2 = 1.0f - sideScaleY1;
+  private Paint selectorPaint;
+
+  private float minTargetY = 0.05f;
+  private float maxTargetY = 1.0f - minTargetY;
+
+  private float scaleX = 0.5f;
+  private float scaleY1 = minTargetY;
+  private float scaleY2 = 1.0f - scaleY1;
   private float selectorTargetY = 0.5f;
 
   public SuperVASView(Context context) {
@@ -40,11 +45,17 @@ public class SuperVASView extends View {
   }
 
   private void init() {
-    sideScalePaint = new Paint();
-    sideScalePaint.setAntiAlias(true);
-    sideScalePaint.setStyle(Paint.Style.STROKE);
-    sideScalePaint.setStrokeWidth(0.01f);
-    sideScalePaint.setColor(Color.GRAY);
+    scalePaint = new Paint();
+    scalePaint.setAntiAlias(true);
+    scalePaint.setStyle(Paint.Style.STROKE);
+    scalePaint.setStrokeWidth(0.005f);
+    scalePaint.setColor(Color.GRAY);
+
+    selectorPaint = new Paint();
+    selectorPaint.setAntiAlias(true);
+    selectorPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+    selectorPaint.setStrokeWidth(0.005f);
+    selectorPaint.setColor(Color.GRAY);
   }
 
   /**
@@ -69,6 +80,10 @@ public class SuperVASView extends View {
 
   private void setSelectorTarget(float target) {
     selectorTargetY = target;
+    if (selectorTargetY < minTargetY)
+      selectorTargetY = minTargetY;
+    else if (selectorTargetY > maxTargetY)
+      selectorTargetY = maxTargetY;
     invalidate();
   }
 
@@ -80,22 +95,20 @@ public class SuperVASView extends View {
     canvas.save(Canvas.MATRIX_SAVE_FLAG);
     canvas.scale((float) getWidth(), (float) getHeight());
 
-    drawSideScale(canvas);
+    drawScale(canvas);
     drawSelector(canvas);
 
     canvas.restore();
   }
 
-  private void drawSideScale(Canvas canvas) {
-    Log.d(TAG, "drawSideScale");
-    canvas.drawLine(sideScaleX, sideScaleY1, sideScaleX, sideScaleY2, sideScalePaint);
+  private void drawScale(Canvas canvas) {
+    Log.d(TAG, "drawScale");
+    canvas.drawLine(scaleX, scaleY1, scaleX, scaleY2, scalePaint);
   }
 
   private void drawSelector(Canvas canvas) {
     Log.d(TAG, "drawSelector");
-    canvas.drawLine(sideScaleX + 0.02f, selectorTargetY,
-        1.0f - (sideScaleX + 0.02f), selectorTargetY,
-        sideScalePaint);
+    canvas.drawCircle(0.5f, selectorTargetY, 0.025f, selectorPaint);
   }
 
   /**
@@ -116,7 +129,7 @@ public class SuperVASView extends View {
   }
 
   public int getProgress() {
-    return 100 - (int) (selectorTargetY * 100);
+    return 100 - (int) Utility.linearlyScale(selectorTargetY, minTargetY, maxTargetY, 0.0f, 100.0f);
   }
 
 }
