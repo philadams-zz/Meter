@@ -126,8 +126,8 @@ public class ManyFingersView extends View {
    */
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    Log.d(TAG, String.format("width spec: %s", MeasureSpec.toString(widthMeasureSpec)));
-    Log.d(TAG, String.format("height spec: %s", MeasureSpec.toString(heightMeasureSpec)));
+    //Log.d(TAG, String.format("width spec: %s", MeasureSpec.toString(widthMeasureSpec)));
+    //Log.d(TAG, String.format("height spec: %s", MeasureSpec.toString(heightMeasureSpec)));
 
     int widthMode = MeasureSpec.getMode(widthMeasureSpec);
     int widthDim = MeasureSpec.getSize(widthMeasureSpec);

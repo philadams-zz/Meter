@@ -135,7 +135,6 @@ public class PAMActivity extends MeterBaseActivity {
         }
         highlightSelection(view);
         selection = position;
-        Log.d(TAG, String.format("selection=%d", selection));
         pam_photo_id = IMAGE_FOLDERS[position];
       }
     });

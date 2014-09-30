@@ -102,12 +102,10 @@ public class SuperVASView extends View {
   }
 
   private void drawScale(Canvas canvas) {
-    Log.d(TAG, "drawScale");
     canvas.drawLine(scaleX, scaleY1, scaleX, scaleY2, scalePaint);
   }
 
   private void drawSelector(Canvas canvas) {
-    Log.d(TAG, "drawSelector");
     canvas.drawCircle(0.5f, selectorTargetY, 0.025f, selectorPaint);
   }
 
@@ -117,8 +115,8 @@ public class SuperVASView extends View {
    */
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    Log.d(TAG, String.format("width spec: %s", MeasureSpec.toString(widthMeasureSpec)));
-    Log.d(TAG, String.format("height spec: %s", MeasureSpec.toString(heightMeasureSpec)));
+    //Log.d(TAG, String.format("width spec: %s", MeasureSpec.toString(widthMeasureSpec)));
+    //Log.d(TAG, String.format("height spec: %s", MeasureSpec.toString(heightMeasureSpec)));
 
     int widthMode = MeasureSpec.getMode(widthMeasureSpec);
     int widthDim = MeasureSpec.getSize(widthMeasureSpec);

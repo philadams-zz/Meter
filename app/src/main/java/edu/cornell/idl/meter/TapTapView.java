@@ -82,7 +82,6 @@ public class TapTapView extends View {
     canvas.save(Canvas.MATRIX_SAVE_FLAG);
     canvas.scale((float) getWidth(), (float) getHeight());
 
-    Log.d(TAG, "onDraw");
     drawReportedValue(canvas);
 
     canvas.restore();
@@ -92,7 +91,6 @@ public class TapTapView extends View {
    * drawReportedValue(int value)
    */
   protected void drawReportedValue(Canvas canvas) {
-    Log.d(TAG, "drawReportedValue");
     canvas.drawText(String.valueOf(reportedValue), 0.5f, 0.8f, reportedValuePaint);
   }
 
@@ -102,8 +100,8 @@ public class TapTapView extends View {
    */
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    Log.d(TAG, String.format("width spec: %s", MeasureSpec.toString(widthMeasureSpec)));
-    Log.d(TAG, String.format("height spec: %s", MeasureSpec.toString(heightMeasureSpec)));
+    //Log.d(TAG, String.format("width spec: %s", MeasureSpec.toString(widthMeasureSpec)));
+    //Log.d(TAG, String.format("height spec: %s", MeasureSpec.toString(heightMeasureSpec)));
 
     int widthMode = MeasureSpec.getMode(widthMeasureSpec);
     int widthDim = MeasureSpec.getSize(widthMeasureSpec);
