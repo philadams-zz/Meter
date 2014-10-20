@@ -13,4 +13,9 @@ public class SuuretaActivity extends MeterBaseActivity {
     return (float) suuretaView.getProgress();
   }
 
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "Suureta v0.0.1";
+  }
+
 }

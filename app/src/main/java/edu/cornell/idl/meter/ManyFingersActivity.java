@@ -13,4 +13,9 @@ public class ManyFingersActivity extends MeterBaseActivity {
     return (float) manyFingersView.getProgress();
   }
 
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "ManyFingers v0.0.1";
+  }
+
 }

@@ -13,4 +13,9 @@ public class VASActivity extends MeterBaseActivity {
     return (float) verticalSeekBar.getProgress();
   }
 
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "VAS v0.0.1";
+  }
+
 }

@@ -3,7 +3,6 @@ package edu.cornell.idl.meter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +35,7 @@ public abstract class MeterBaseActivity extends Activity {
         Intent result = new Intent();
         result.putExtra(Constants.OHMAGE_SCORE_KEY, reportedScore);
         result.putExtra("secondsToComplete", getCompletionSeconds());
+        result.putExtra("meterNameAndVersion", getMeterNameAndVersion());
         setResult(RESULT_OK, result);
         finish();
       }
@@ -47,6 +47,8 @@ public abstract class MeterBaseActivity extends Activity {
   }
 
   protected abstract int getLayoutResourceId();
+
+  protected abstract String getMeterNameAndVersion();
 
   protected abstract float getReportedScore();
 

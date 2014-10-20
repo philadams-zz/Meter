@@ -13,4 +13,9 @@ public class TapTapActivity extends MeterBaseActivity {
     return (float) tapTapView.getProgress();
   }
 
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "TapTap v0.0.1";
+  }
+
 }

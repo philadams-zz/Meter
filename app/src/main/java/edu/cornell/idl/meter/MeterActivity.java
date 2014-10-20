@@ -7,6 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+/**
+ * TODO if including PAM, add licensing note for images
+ * TODO handle null submission events (just a toast?)
+ */
 public class MeterActivity extends Activity {
 
   static final String TAG = "MeterActivity";
@@ -24,7 +28,6 @@ public class MeterActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_meter);
   }
-
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,7 +73,11 @@ public class MeterActivity extends Activity {
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (resultCode == RESULT_OK) {
       float reportedPainLevel = data.getFloatExtra(Constants.OHMAGE_SCORE_KEY, -1);
+      double secondsToComplete = data.getDoubleExtra("secondsToComplete", -1);
+      String meterNameAndVersion = data.getStringExtra("meterNameAndVersion");
       Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel), Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion), Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete), Toast.LENGTH_SHORT).show();
     }
     //if (requestCode == MeterActivity.LAUNCH_VAS) {}
   }

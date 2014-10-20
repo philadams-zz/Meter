@@ -18,4 +18,9 @@ public class NRSActivity extends MeterBaseActivity {
         ((RadioButton) findViewById(selectedRadioButton)).getText().toString());
     return reportedScore;
   }
+
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "NRS11 v0.0.1";
+  }
 }

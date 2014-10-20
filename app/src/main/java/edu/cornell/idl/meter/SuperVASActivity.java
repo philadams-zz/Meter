@@ -13,4 +13,9 @@ public class SuperVASActivity extends MeterBaseActivity {
     return (float) superVASView.getProgress();
   }
 
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "SuperVAS v0.0.1";
+  }
+
 }

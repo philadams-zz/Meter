@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -112,7 +111,8 @@ public class PAMActivity extends MeterBaseActivity {
         ImageView imageView;
         if (null == convertView) {
           imageView = new ImageView(getApplicationContext());
-          imageView.setLayoutParams(new GridView.LayoutParams(parent.getWidth() / 4, parent.getWidth() / 4));
+          imageView.setLayoutParams(
+              new GridView.LayoutParams(parent.getWidth() / 4, parent.getWidth() / 4));
           imageView.setScaleType(ImageView.ScaleType.FIT_XY);
           imageView.setColorFilter(null);
         } else {
@@ -152,5 +152,10 @@ public class PAMActivity extends MeterBaseActivity {
   @Override
   protected float getReportedScore() {
     return (selection != GridView.INVALID_POSITION) ? (float) selection : -1.0f;
+  }
+
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "PAM v0.0.1";
   }
 }

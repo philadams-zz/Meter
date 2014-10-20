@@ -4,13 +4,18 @@ public class MeterOneActivity extends MeterBaseActivity {
 
   @Override
   protected int getLayoutResourceId() {
-    return R.layout.activity_vas;
+    return R.layout.activity_many_fingers;
   }
 
   @Override
   protected float getReportedScore() {
-    VerticalSeekBar verticalSeekBar = (VerticalSeekBar) findViewById(R.id.vas_vertical_seek_bar);
-    return (float) verticalSeekBar.getProgress();
+    ManyFingersView manyFingersView = (ManyFingersView) findViewById(R.id.many_fingers_view);
+    return (float) manyFingersView.getProgress();
+  }
+
+  @Override
+  protected String getMeterNameAndVersion() {
+    return "ManyFingers v0.0.1";
   }
 
 }
