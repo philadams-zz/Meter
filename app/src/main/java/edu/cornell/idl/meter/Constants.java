@@ -11,5 +11,4 @@ public class Constants {
   // Ohmage' intent key for 'score'
   // https://github.com/ohmage/server/wiki/Campaign-Definition#promptTypes
   static final String OHMAGE_SCORE_KEY = "score";
-
 }

@@ -17,5 +17,4 @@ public class SuuretaActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "Suureta v0.0.1";
   }
-
 }

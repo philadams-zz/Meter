@@ -17,5 +17,4 @@ public class MeterOneActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "ManyFingers v0.0.1";
   }
-
 }

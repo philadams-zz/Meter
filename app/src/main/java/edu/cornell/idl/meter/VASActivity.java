@@ -17,5 +17,4 @@ public class VASActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "VAS v0.0.1";
   }
-
 }

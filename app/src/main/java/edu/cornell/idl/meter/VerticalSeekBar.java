@@ -38,8 +38,8 @@ public class VerticalSeekBar extends SeekBar {
   }
 
   public synchronized void setProgressAndThumb(int progress) {
-    setProgress(getMax() - (getMax()- progress));
-    onSizeChanged(getWidth(), getHeight() , 0, 0);
+    setProgress(getMax() - (getMax() - progress));
+    onSizeChanged(getWidth(), getHeight(), 0, 0);
   }
 
   @Override
@@ -63,5 +63,4 @@ public class VerticalSeekBar extends SeekBar {
     }
     return true;
   }
-
 }

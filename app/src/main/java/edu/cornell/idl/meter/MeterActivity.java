@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 /**
- * TODO if including PAM, add licensing note for images
  * TODO handle null submission events (just a toast?)
  */
 public class MeterActivity extends Activity {
@@ -43,7 +42,8 @@ public class MeterActivity extends Activity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_meter_one) {
-      startActivityForResult(new Intent(this, MeterOneActivity.class), MeterActivity.LAUNCH_METER_ONE);
+      startActivityForResult(new Intent(this, MeterOneActivity.class),
+          MeterActivity.LAUNCH_METER_ONE);
     }
     if (id == R.id.action_vas) {
       startActivityForResult(new Intent(this, VASActivity.class), MeterActivity.LAUNCH_VAS);
@@ -55,13 +55,15 @@ public class MeterActivity extends Activity {
       startActivityForResult(new Intent(this, SuuretaActivity.class), MeterActivity.LAUNCH_SUURETA);
     }
     if (id == R.id.action_super_vas) {
-      startActivityForResult(new Intent(this, SuperVASActivity.class), MeterActivity.LAUNCH_SUPER_VAS);
+      startActivityForResult(new Intent(this, SuperVASActivity.class),
+          MeterActivity.LAUNCH_SUPER_VAS);
     }
     if (id == R.id.action_pam) {
       startActivityForResult(new Intent(this, PAMActivity.class), MeterActivity.LAUNCH_PAM);
     }
     if (id == R.id.action_many_fingers) {
-      startActivityForResult(new Intent(this, ManyFingersActivity.class), MeterActivity.LAUNCH_MANY_FINGERS);
+      startActivityForResult(new Intent(this, ManyFingersActivity.class),
+          MeterActivity.LAUNCH_MANY_FINGERS);
     }
     if (id == R.id.action_tap_tap) {
       startActivityForResult(new Intent(this, TapTapActivity.class), MeterActivity.LAUNCH_TAP_TAP);
@@ -75,10 +77,12 @@ public class MeterActivity extends Activity {
       float reportedPainLevel = data.getFloatExtra(Constants.OHMAGE_SCORE_KEY, -1);
       double secondsToComplete = data.getDoubleExtra("secondsToComplete", -1);
       String meterNameAndVersion = data.getStringExtra("meterNameAndVersion");
-      Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel), Toast.LENGTH_SHORT).show();
-      Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion), Toast.LENGTH_SHORT).show();
-      Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete), Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel),
+          Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion),
+          Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
+          Toast.LENGTH_SHORT).show();
     }
-    //if (requestCode == MeterActivity.LAUNCH_VAS) {}
   }
 }

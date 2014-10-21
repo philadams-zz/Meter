@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-
 /**
  * A circle for the Suureta meter that grows when the screen is touched.
  */
@@ -64,7 +63,7 @@ public class SuuretaView extends View {
     float pointX = event.getX();
     float pointY = event.getY();
 
-    switch(event.getAction()) {
+    switch (event.getAction()) {
       case MotionEvent.ACTION_DOWN:
         mHandler = new Handler();
         mHandler.postDelayed(mGrow, refreshRate);

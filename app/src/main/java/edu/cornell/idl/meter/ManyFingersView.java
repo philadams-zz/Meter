@@ -21,7 +21,8 @@ public class ManyFingersView extends View {
   private SparseArray<PointF> activePointers;
   private Paint pointerPaint;
   private long lastScoreStagedTime = -1;
-  private int pointerResetThreshold = 500;  // milliseconds before resetting point count on new touch event
+  private int pointerResetThreshold = 500;
+  // milliseconds before resetting point count on new touch event
 
   private int pointerRadius = 100;
 
@@ -52,7 +53,7 @@ public class ManyFingersView extends View {
   /**
    * Keep track of how many fingers are touching this View.
    * The int reportedValue gets set, and the fingerpoints are retained
-   *   (a) if the number of fingers on the screen hasn't changed in 1 second
+   * (a) if the number of fingers on the screen hasn't changed in 1 second
    */
   public boolean onTouchEvent(MotionEvent event) {
     int pointerIndex = event.getActionIndex();
@@ -65,8 +66,8 @@ public class ManyFingersView extends View {
 
         // if we're over the pointerResetThreshold time and a new touch comes in,
         // reset the pointer count
-        if (lastScoreStagedTime != -1 &&
-            System.currentTimeMillis() - lastScoreStagedTime > pointerResetThreshold) {
+        if (lastScoreStagedTime != -1
+            && System.currentTimeMillis() - lastScoreStagedTime > pointerResetThreshold) {
           activePointers.clear();
           lastScoreStagedTime = -1;
         } else {
@@ -139,5 +140,4 @@ public class ManyFingersView extends View {
   public int getProgress() {
     return activePointers.size();
   }
-
 }

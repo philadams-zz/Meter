@@ -30,22 +30,9 @@ public class PAMActivity extends MeterBaseActivity {
   private int[] imageIds;
   private int selection = GridView.INVALID_POSITION;
   public static final String[] IMAGE_FOLDERS = new String[] {
-      "1_afraid",
-      "2_tense",
-      "3_excited",
-      "4_delighted",
-      "5_frustrated",
-      "6_angry",
-      "7_happy",
-      "8_glad",
-      "9_miserable",
-      "10_sad",
-      "11_calm",
-      "12_satisfied",
-      "13_gloomy",
-      "14_tired",
-      "15_sleepy",
-      "16_serene"
+      "1_afraid", "2_tense", "3_excited", "4_delighted", "5_frustrated", "6_angry", "7_happy",
+      "8_glad", "9_miserable", "10_sad", "11_calm", "12_satisfied", "13_gloomy", "14_tired",
+      "15_sleepy", "16_serene"
   };
 
   protected void onCreate(Bundle savedInstanceState) {

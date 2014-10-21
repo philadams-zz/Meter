@@ -70,7 +70,8 @@ public class SuperVASView extends View {
         setSelectorTarget(eventY / viewHeight);
         return true;
       case MotionEvent.ACTION_UP:
-        setSelectorTarget(eventY / viewHeight);  // update the selector to point at where user clicked
+        setSelectorTarget(
+            eventY / viewHeight);  // update the selector to point at where user clicked
         return true;
       default:
         return super.onTouchEvent(motionEvent);
@@ -79,10 +80,9 @@ public class SuperVASView extends View {
 
   private void setSelectorTarget(float target) {
     selectorTargetY = target;
-    if (selectorTargetY < minTargetY)
+    if (selectorTargetY < minTargetY) {
       selectorTargetY = minTargetY;
-    else if (selectorTargetY > maxTargetY)
-      selectorTargetY = maxTargetY;
+    } else if (selectorTargetY > maxTargetY) selectorTargetY = maxTargetY;
     invalidate();
   }
 
@@ -128,5 +128,4 @@ public class SuperVASView extends View {
   public int getProgress() {
     return 100 - (int) Utility.linearlyScale(selectorTargetY, minTargetY, maxTargetY, 0.0f, 100.0f);
   }
-
 }

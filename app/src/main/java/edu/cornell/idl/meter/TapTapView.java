@@ -12,7 +12,9 @@ import android.view.View;
 /**
  * View that listens for single taps, and increments pain value accordingly.
  * The tap following reportedValue = maxValue loops back to 0.
- * Perhaps show the 0..5 along the bottom or top, with the anchors, as well as the big number in the middle?
+ * Perhaps show the 0..5 along the bottom or top, with the anchors, as well as the big number in
+ * the
+ * middle?
  */
 public class TapTapView extends View {
 
@@ -113,5 +115,4 @@ public class TapTapView extends View {
   public int getProgress() {
     return reportedValue;
   }
-
 }

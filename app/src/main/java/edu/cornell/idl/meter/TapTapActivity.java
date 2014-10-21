@@ -17,5 +17,4 @@ public class TapTapActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "TapTap v0.0.1";
   }
-
 }

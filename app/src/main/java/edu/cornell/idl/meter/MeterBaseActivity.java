@@ -9,7 +9,8 @@ import android.widget.Button;
 
 /**
  * TODO force user to do *something* and not submit null results...
- * TODO support resetting of each meter, ideally with a consistent method (longPress? doubletap? shake?)
+ * TODO support resetting of each meter, ideally with a consistent method (longPress? doubletap?
+ * shake?)
  */
 public abstract class MeterBaseActivity extends Activity {
 
@@ -43,7 +44,7 @@ public abstract class MeterBaseActivity extends Activity {
   }
 
   private double getCompletionSeconds() {
-    return ((double)(System.nanoTime() - activityCreated)) / Constants.ONE_BILLION;
+    return ((double) (System.nanoTime() - activityCreated)) / Constants.ONE_BILLION;
   }
 
   protected abstract int getLayoutResourceId();
@@ -51,5 +52,4 @@ public abstract class MeterBaseActivity extends Activity {
   protected abstract String getMeterNameAndVersion();
 
   protected abstract float getReportedScore();
-
 }
