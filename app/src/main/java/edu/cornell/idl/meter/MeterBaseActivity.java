@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * TODO force user to do *something* and not submit null results...
- * TODO support resetting of each meter, ideally with a consistent method (longPress? doubletap?
+ * TODO force user to do *something* and not submit empty results - what's empty and what's 0?
+ * TODO support resetting of each meter, ideally with a consistent method (longPress? doubletap?)
  * shake?)
  */
 public abstract class MeterBaseActivity extends Activity {

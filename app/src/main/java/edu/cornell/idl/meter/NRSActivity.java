@@ -12,10 +12,13 @@ public class NRSActivity extends MeterBaseActivity {
 
   @Override
   protected float getReportedScore() {
+    float reportedScore = -1;
     RadioGroup radioGroup = (RadioGroup) findViewById(R.id.nrs_radiogroup);
     int selectedRadioButton = radioGroup.getCheckedRadioButtonId();
-    float reportedScore = Float.parseFloat(
-        ((RadioButton) findViewById(selectedRadioButton)).getText().toString());
+    if (reportedScore != -1) {
+      reportedScore =
+          Float.parseFloat(((RadioButton) findViewById(selectedRadioButton)).getText().toString());
+    }
     return reportedScore;
   }
 

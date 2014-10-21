@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 /**
- * TODO handle null submission events (just a toast?)
+ *
  */
 public class MeterActivity extends Activity {
 
