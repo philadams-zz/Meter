@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 /**
- *
+ * TODO: SuperNRS???
  */
 public class MeterActivity extends Activity {
 
@@ -18,6 +18,7 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_NRS = 12;
   static final int LAUNCH_SUURETA = 13;
   static final int LAUNCH_SUPER_VAS = 14;
+  static final int LAUNCH_SUPER_VAS_PLUS = 18;
   static final int LAUNCH_PAM = 15;
   static final int LAUNCH_MANY_FINGERS = 16;
   static final int LAUNCH_TAP_TAP = 17;
@@ -57,6 +58,10 @@ public class MeterActivity extends Activity {
     if (id == R.id.action_super_vas) {
       startActivityForResult(new Intent(this, SuperVASActivity.class),
           MeterActivity.LAUNCH_SUPER_VAS);
+    }
+    if (id == R.id.action_super_vas_plus) {
+      startActivityForResult(new Intent(this, SuperVASPlusActivity.class),
+          MeterActivity.LAUNCH_SUPER_VAS_PLUS);
     }
     if (id == R.id.action_pam) {
       startActivityForResult(new Intent(this, PAMActivity.class), MeterActivity.LAUNCH_PAM);

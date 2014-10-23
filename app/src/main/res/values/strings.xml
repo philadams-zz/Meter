@@ -9,28 +9,31 @@
   <string name="action_nrs">NRS</string>
   <string name="action_suureta">Suureta</string>
   <string name="action_super_vas">SuperVAS</string>
+  <string name="action_super_vas_plus">SuperVAS+</string>
   <string name="action_pam">PAM</string>
   <string name="action_many_fingers">ManyFingers</string>
   <string name="action_tap_tap">TapTap</string>
 
   <string name="button_submit_response">Submit</string>
 
-  <string name="vas_prompt">Please indicate your pain level with the following seek bar:</string>
+  <string name="vas_prompt">Please indicate your current pain level with the following seek bar:</string>
   <string name="vas_anchor_low">No pain at all</string>
   <string name="vas_anchor_high">Worst pain imaginable</string>
 
-  <string name="nrs_prompt">Please indicate your pain level with the following NRS:</string>
+  <string name="nrs_prompt">Please indicate your current pain level with the following NRS:</string>
 
-  <string name="suureta_prompt">Please tap-and-hold the screen to report your pain level:</string>
+  <string name="suureta_prompt">Please tap-and-hold the screen to report your current pain level:</string>
 
-  <string name="super_vas_prompt">Please indicate your pain level with the following seek bar:</string>
+  <string name="super_vas_prompt">Please indicate your current pain level with the following seek bar:</string>
+
+  <string name="super_vas_plus_prompt">Please indicate your current pain level by moving this bar:</string>
 
   <string name="pam_prompt">Please tap on the image that best represents your current pain level:</string>
   <string name="pam_more_images">More images</string>
 
-  <string name="many_fingers_prompt">Please touch the screen with 1 to 5 fingers to report your pain intensity level (5 = worst pain ever):</string>
+  <string name="many_fingers_prompt">Please touch the screen with 1 to 5 fingers to report your current pain intensity level (5 = worst pain ever):</string>
 
-  <string name="tap_tap_prompt">Please tap the screen repeatedly to increment your reported pain intensity (0 is no pain, 10 is the worst pain ever):</string>
+  <string name="tap_tap_prompt">Please tap the screen repeatedly to report your current pain level (0 is no pain, 10 is the worst pain ever):</string>
 
   <string name="title_activity_default">Meter meter</string>
   <string name="hello_world">Hello world!</string>

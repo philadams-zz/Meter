@@ -14,7 +14,7 @@ import android.view.View;
  */
 public class SuuretaView extends View {
   private final int paintColor = Color.BLACK;
-  private final int refreshRate = 5;  // smaller values grow suureta more quickly
+  private final int refreshRate = 2;  // smaller values grow suureta more quickly
   private Paint paint;
   private int radius;
   private Handler mHandler;
