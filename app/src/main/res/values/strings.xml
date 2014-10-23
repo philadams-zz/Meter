@@ -23,14 +23,14 @@
 
   <string name="suureta_prompt">Please tap-and-hold the screen to report your pain level:</string>
 
-  <string name="super_vas_prompt">Please indicate your pain level with the following super seek bar:</string>
+  <string name="super_vas_prompt">Please indicate your pain level with the following seek bar:</string>
 
-  <string name="pam_prompt">Please indicate your pain level by tapping on the image that best represents your pain level.</string>
+  <string name="pam_prompt">Please tap on the image that best represents your current pain level:</string>
   <string name="pam_more_images">More images</string>
 
-  <string name="many_fingers_prompt">Touch the screen with 1..5 fingers to report your pain intensity level (5 = worst pain ever).</string>
+  <string name="many_fingers_prompt">Please touch the screen with 1 to 5 fingers to report your pain intensity level (5 = worst pain ever):</string>
 
-  <string name="tap_tap_prompt">Tap the screen repeatedly to increment your reported pain intensity (0 is no pain, 10 is the worst pain ever).</string>
+  <string name="tap_tap_prompt">Please tap the screen repeatedly to increment your reported pain intensity (0 is no pain, 10 is the worst pain ever):</string>
 
   <string name="title_activity_default">Meter meter</string>
   <string name="hello_world">Hello world!</string>
