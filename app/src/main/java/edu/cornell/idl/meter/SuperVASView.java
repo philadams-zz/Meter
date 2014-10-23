@@ -9,16 +9,16 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * TODO make pretty!
- * TODO effectively bound the selector range
  */
 public class SuperVASView extends View {
 
   final static String TAG = "SuperVASView";
 
-  private Paint scalePaint;
+  private Paint scaleSelectedPaint;
+  private Paint scaleUnselectedPaint;
 
-  private Paint selectorPaint;
+  private Paint selectorInnerPaint;
+  private Paint selectorOuterPaint;
 
   private float minTargetY = 0.05f;
   private float maxTargetY = 1.0f - minTargetY;
@@ -44,17 +44,29 @@ public class SuperVASView extends View {
   }
 
   private void init() {
-    scalePaint = new Paint();
-    scalePaint.setAntiAlias(true);
-    scalePaint.setStyle(Paint.Style.STROKE);
-    scalePaint.setStrokeWidth(0.005f);
-    scalePaint.setColor(Color.GRAY);
+    scaleUnselectedPaint = new Paint();
+    scaleUnselectedPaint.setAntiAlias(true);
+    scaleUnselectedPaint.setStyle(Paint.Style.STROKE);
+    scaleUnselectedPaint.setStrokeWidth(0.005f);
+    scaleUnselectedPaint.setColor(Color.LTGRAY);
 
-    selectorPaint = new Paint();
-    selectorPaint.setAntiAlias(true);
-    selectorPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-    selectorPaint.setStrokeWidth(0.005f);
-    selectorPaint.setColor(Color.GRAY);
+    scaleSelectedPaint = new Paint();
+    scaleSelectedPaint.setAntiAlias(true);
+    scaleSelectedPaint.setStyle(Paint.Style.STROKE);
+    scaleSelectedPaint.setStrokeWidth(0.01f);
+    scaleSelectedPaint.setColor(getResources().getColor(android.R.color.holo_blue_light));
+
+    selectorInnerPaint = new Paint();
+    selectorInnerPaint.setAntiAlias(true);
+    selectorInnerPaint.setStyle(Paint.Style.FILL);
+    selectorInnerPaint.setColor(getResources().getColor(android.R.color.holo_blue_light));
+
+    selectorOuterPaint = new Paint();
+    selectorOuterPaint.setAntiAlias(true);
+    selectorOuterPaint.setStyle(Paint.Style.FILL);
+    selectorOuterPaint.setStrokeWidth(0.01f);
+    selectorOuterPaint.setColor(getResources().getColor(android.R.color.holo_blue_light));
+    selectorOuterPaint.setAlpha(125);  // must come after setColor()
   }
 
   /**
@@ -101,11 +113,13 @@ public class SuperVASView extends View {
   }
 
   private void drawScale(Canvas canvas) {
-    canvas.drawLine(scaleX, scaleY1, scaleX, scaleY2, scalePaint);
+    canvas.drawLine(scaleX, scaleY1, scaleX, selectorTargetY, scaleUnselectedPaint);
+    canvas.drawLine(scaleX, selectorTargetY, scaleX, scaleY2, scaleSelectedPaint);
   }
 
   private void drawSelector(Canvas canvas) {
-    canvas.drawCircle(0.5f, selectorTargetY, 0.025f, selectorPaint);
+    canvas.drawCircle(0.5f, selectorTargetY, 0.04f, selectorOuterPaint);
+    canvas.drawCircle(0.5f, selectorTargetY, 0.015f, selectorInnerPaint);
   }
 
   /**
@@ -114,8 +128,6 @@ public class SuperVASView extends View {
    */
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    //Log.d(TAG, String.format("width spec: %s", MeasureSpec.toString(widthMeasureSpec)));
-    //Log.d(TAG, String.format("height spec: %s", MeasureSpec.toString(heightMeasureSpec)));
 
     int widthMode = MeasureSpec.getMode(widthMeasureSpec);
     int widthDim = MeasureSpec.getSize(widthMeasureSpec);
