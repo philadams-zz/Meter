@@ -1,20 +1,26 @@
 package edu.cornell.idl.meter;
 
-public class MeterOneActivity extends MeterBaseActivity {
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import java.util.Random;
+
+public class MeterOneActivity extends Activity {
+
+  private Class meters[] = {
+      ManyFingersActivity.class, NRSActivity.class, PAMActivity.class, SuperVASActivity.class,
+      SuperVASPlusActivity.class, SuuretaActivity.class, TapTapActivity.class, VASActivity.class
+  };
 
   @Override
-  protected int getLayoutResourceId() {
-    return R.layout.activity_many_fingers;
-  }
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-  @Override
-  protected float getReportedScore() {
-    ManyFingersView manyFingersView = (ManyFingersView) findViewById(R.id.many_fingers_view);
-    return (float) manyFingersView.getProgress();
-  }
-
-  @Override
-  protected String getMeterNameAndVersion() {
-    return "ManyFingers v0.0.1";
+    // launch a randomly selected meter, capture its response, and return data to calling activity
+    Class meter = meters[(new Random()).nextInt(meters.length)];
+    Intent intent = new Intent(this, meter);
+    intent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+    startActivity(intent);
+    finish();
   }
 }
