@@ -11,4 +11,8 @@ public class Utility {
     float newRange = newMax - newMin;
     return (((x - oldMin) * newRange) / oldRange) + newMin;
   }
+
+  public static int clamp(int value, int min, int max) {
+    return Math.max(min, Math.min(max, value));
+  }
 }
