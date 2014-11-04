@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.cornell.idl.meter"
-    android:versionCode="2"
-    android:versionName="0.0.1">
+    package="edu.cornell.idl.meter">
 
   <application
       android:allowBackup="true"
@@ -102,6 +100,16 @@
 
     <activity
         android:name=".TapTapActivity"
+        android:label="@string/title_activity_default"
+        android:theme="@style/MeterTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".SAFEActivity"
         android:label="@string/title_activity_default"
         android:theme="@style/MeterTheme">
       <intent-filter>

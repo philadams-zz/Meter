@@ -22,6 +22,7 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_PAM = 15;
   static final int LAUNCH_MANY_FINGERS = 16;
   static final int LAUNCH_TAP_TAP = 17;
+  static final int LAUNCH_SAFE = 18;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,9 @@ public class MeterActivity extends Activity {
     }
     if (id == R.id.action_tap_tap) {
       startActivityForResult(new Intent(this, TapTapActivity.class), MeterActivity.LAUNCH_TAP_TAP);
+    }
+    if (id == R.id.action_safe) {
+      startActivityForResult(new Intent(this, SAFEActivity.class), MeterActivity.LAUNCH_SAFE);
     }
     return super.onOptionsItemSelected(item);
   }
