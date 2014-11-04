@@ -75,8 +75,7 @@ public class SuperVASPlusView extends View {
         setSelectorTarget(eventY / viewHeight);
         return true;
       case MotionEvent.ACTION_UP:
-        setSelectorTarget(
-            eventY / viewHeight);  // update the selector to point at where user clicked
+        setSelectorTarget(eventY / viewHeight);  // update the selector to where user clicked
         return true;
       default:
         return super.onTouchEvent(motionEvent);

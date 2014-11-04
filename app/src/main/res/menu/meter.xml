@@ -1,40 +1,54 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.cornell.idl.meter.MeterActivity" >
-  <item android:id="@+id/action_meter_one"
+    tools:context="edu.cornell.idl.meter.MeterActivity">
+  <item
+      android:id="@+id/action_meter_one"
       android:title="@string/action_meter_one"
       android:orderInCategory="100"
       android:showAsAction="never" />
-    <item android:id="@+id/action_vas"
-        android:title="@string/action_vas"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
-  <item android:id="@+id/action_nrs"
+  <item
+      android:id="@+id/action_vas"
+      android:title="@string/action_vas"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
+  <item
+      android:id="@+id/action_nrs"
       android:title="@string/action_nrs"
       android:orderInCategory="100"
       android:showAsAction="never" />
-  <item android:id="@+id/action_suureta"
+  <item
+      android:id="@+id/action_suureta"
       android:title="@string/action_suureta"
       android:orderInCategory="100"
       android:showAsAction="never" />
-  <item android:id="@+id/action_super_vas"
+  <item
+      android:id="@+id/action_super_vas"
       android:title="@string/action_super_vas"
       android:orderInCategory="100"
       android:showAsAction="never" />
-  <item android:id="@+id/action_super_vas_plus"
+  <item
+      android:id="@+id/action_super_vas_plus"
       android:title="@string/action_super_vas_plus"
       android:orderInCategory="100"
       android:showAsAction="never" />
-  <item android:id="@+id/action_pam"
+  <item
+      android:id="@+id/action_pam"
       android:title="@string/action_pam"
       android:orderInCategory="100"
       android:showAsAction="never" />
-  <item android:id="@+id/action_many_fingers"
+  <item
+      android:id="@+id/action_many_fingers"
       android:title="@string/action_many_fingers"
       android:orderInCategory="100"
       android:showAsAction="never" />
-  <item android:id="@+id/action_tap_tap"
+  <item
+      android:id="@+id/action_tap_tap"
       android:title="@string/action_tap_tap"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
+  <item
+      android:id="@+id/action_safe"
+      android:title="@string/action_safe"
       android:orderInCategory="100"
       android:showAsAction="never" />
 </menu>
