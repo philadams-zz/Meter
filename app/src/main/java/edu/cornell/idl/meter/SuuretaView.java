@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -13,10 +14,15 @@ import android.view.View;
  * A circle for the Suureta meter that grows when the screen is touched.
  */
 public class SuuretaView extends View {
-  private final int paintColor = Color.BLACK;
-  private final int refreshRate = 2;  // smaller values grow suureta more quickly
+
+  final static String TAG = "SuuretaView";
+
+  private final int paintColor = Color.BLUE;
+  private final int refreshRate = 3;  // larger values grow suureta more quickly
   private Paint paint;
   private int radius;
+  private int minRadius;
+  private int maxRadius;
   private Handler mHandler;
   private Runnable mGrow;
 
@@ -37,11 +43,13 @@ public class SuuretaView extends View {
     paint.setStrokeCap(Paint.Cap.ROUND);
     paint.setTextSize(100);
     paint.setTextAlign(Paint.Align.CENTER);
-    radius = 20;
+    minRadius = 20;
+    radius = minRadius;
+    maxRadius = 200;
     mGrow = new Runnable() {
       @Override
       public void run() {
-        radius += 2;
+        radius = Utility.clamp(radius + refreshRate, minRadius, maxRadius);
         mHandler.postDelayed(this, 10);
         postInvalidate();
       }
@@ -52,10 +60,10 @@ public class SuuretaView extends View {
   protected void onDraw(Canvas canvas) {
     int centerX = canvas.getWidth() / 2;
     int centerY = canvas.getHeight() / 2;
-    paint.setColor(Color.BLACK);
+    paint.setColor(paintColor);
     canvas.drawCircle(centerX, centerY, radius, paint);
     paint.setColor(Color.RED);
-    canvas.drawText(Integer.toString(radius), centerX, centerY, paint);
+    canvas.drawText(Integer.toString(Utility.linearlyScale(radius, 0, maxRadius, 0, 100)), centerX, centerY, paint);
   }
 
   @Override
@@ -83,13 +91,13 @@ public class SuuretaView extends View {
 
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    int width = getMeasuredWidth();
-    int height = getMeasuredHeight();
-    setMeasuredDimension(100, 100);
+    int widthDim = MeasureSpec.getSize(widthMeasureSpec);
+    int heightDim = MeasureSpec.getSize(heightMeasureSpec);
+    maxRadius = widthDim / 2;
+    setMeasuredDimension(widthDim, heightDim);
   }
 
   public int getProgress() {
-    return this.radius;
+    return Utility.linearlyScale(radius, 0, maxRadius, 0, 100);
   }
 }
