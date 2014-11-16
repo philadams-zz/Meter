@@ -23,6 +23,8 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_MANY_FINGERS = 16;
   static final int LAUNCH_TAP_TAP = 17;
   static final int LAUNCH_SAFE = 18;
+  static final int LAUNCH_PHOTOS_PEOPLE = 19;
+  static final int LAUNCH_PHOTOS_LANDSCAPES = 20;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,12 @@ public class MeterActivity extends Activity {
     }
     if (id == R.id.action_safe) {
       startActivityForResult(new Intent(this, SAFEActivity.class), MeterActivity.LAUNCH_SAFE);
+    }
+    if (id == R.id.action_photos_people) {
+      startActivityForResult(new Intent(this, PhotosPeopleActivity.class), MeterActivity.LAUNCH_PHOTOS_PEOPLE);
+    }
+    if (id == R.id.action_photos_landscape) {
+      startActivityForResult(new Intent(this, PhotosLandscapesActivity.class), MeterActivity.LAUNCH_PHOTOS_LANDSCAPES);
     }
     return super.onOptionsItemSelected(item);
   }
