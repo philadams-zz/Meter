@@ -14,6 +14,8 @@
   <string name="action_many_fingers">ManyFingers</string>
   <string name="action_tap_tap">TapTap</string>
   <string name="action_safe">SAFE</string>
+  <string name="action_photos_people">PhotosPeople</string>
+  <string name="action_photos_landscape">PhotosLandscape</string>
 
   <string name="button_submit_response">Submit</string>
 

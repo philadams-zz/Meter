@@ -51,4 +51,14 @@
       android:title="@string/action_safe"
       android:orderInCategory="100"
       android:showAsAction="never" />
+  <item
+      android:id="@+id/action_photos_people"
+      android:title="@string/action_photos_people"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
+  <item
+      android:id="@+id/action_photos_landscape"
+      android:title="@string/action_photos_landscape"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
 </menu>
