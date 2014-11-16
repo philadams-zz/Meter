@@ -94,12 +94,13 @@ public class MeterActivity extends Activity {
       float reportedPainLevel = data.getFloatExtra(Constants.OHMAGE_SCORE_KEY, -1);
       double secondsToComplete = data.getDoubleExtra("secondsToComplete", -1);
       String meterNameAndVersion = data.getStringExtra("meterNameAndVersion");
-      Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel),
-          Toast.LENGTH_SHORT).show();
-      Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion),
-          Toast.LENGTH_SHORT).show();
-      Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
-          Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, "Pain level submitted", Toast.LENGTH_SHORT).show();
+      //Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel),
+      //    Toast.LENGTH_SHORT).show();
+      //Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion),
+      //    Toast.LENGTH_SHORT).show();
+      //Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
+      //    Toast.LENGTH_SHORT).show();
     }
   }
 }
