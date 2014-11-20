@@ -54,4 +54,7 @@ public class PhotosLandscapesActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "PhotosLandscapes v0.0.1";
   }
+
+  @Override
+  protected void resetView() {}
 }

@@ -26,4 +26,7 @@ public class NRSActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "NRS11 v0.0.1";
   }
+
+  @Override
+  protected void resetView() {}
 }

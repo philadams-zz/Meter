@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 
 /**
- * TODO: SAFE crashes on nexus 6 (out of memory)
+ * TODO: SAFE crashes on nexus 6 (out of memory)... use half the images on shittier hardware?
  */
 public class SAFEView extends View {
 

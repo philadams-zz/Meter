@@ -54,4 +54,7 @@ public class PhotosPeopleActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "PhotosPeople v0.0.1";
   }
+
+  @Override
+  protected void resetView() {}
 }

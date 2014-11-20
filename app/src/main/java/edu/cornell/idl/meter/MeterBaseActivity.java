@@ -17,6 +17,7 @@ public abstract class MeterBaseActivity extends Activity {
   final static String TAG = "MeterBaseActivity";
 
   private long activityCreated;
+  private View view;  // inflated by subclasses
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,19 @@ public abstract class MeterBaseActivity extends Activity {
     activityCreated = System.nanoTime();
 
     LayoutInflater layoutInflater = getLayoutInflater();
-    View layout = layoutInflater.inflate(getLayoutResourceId(), null);
-    setContentView(layout);
+    view = layoutInflater.inflate(getLayoutResourceId(), null);
+    setContentView(view);
 
-    Button submitButton = (Button) layout.findViewById(R.id.submit_button);
+    Button resetButton = (Button) findViewById(R.id.reset_button);
+    if (resetButton != null) {
+      resetButton.setOnClickListener(new View.OnClickListener() {
+        @Override public void onClick(View view) {
+          resetView();
+        }
+      });
+    }
+
+    Button submitButton = (Button) view.findViewById(R.id.submit_button);
     submitButton.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         float reportedScore = getReportedScore();
@@ -52,4 +62,6 @@ public abstract class MeterBaseActivity extends Activity {
   protected abstract String getMeterNameAndVersion();
 
   protected abstract float getReportedScore();
+
+  protected abstract void resetView();
 }

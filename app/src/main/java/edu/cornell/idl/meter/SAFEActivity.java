@@ -17,4 +17,7 @@ public class SAFEActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "SAFE v0.0.1";
   }
+
+  @Override
+  protected void resetView() {}
 }

@@ -33,6 +33,13 @@
   </RelativeLayout>
 
   <Button
+      android:id="@+id/reset_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Reset"
+      android:layout_gravity="center"/>
+
+  <Button
       android:id="@+id/submit_button"
       android:text="@string/button_submit_response"
       android:layout_width="match_parent"

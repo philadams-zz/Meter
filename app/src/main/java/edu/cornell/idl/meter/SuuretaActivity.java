@@ -14,7 +14,13 @@ public class SuuretaActivity extends MeterBaseActivity {
   }
 
   @Override
+  protected void resetView() {
+    SuuretaView suuretaView = (SuuretaView) findViewById(R.id.suureta_view);
+    suuretaView.reset();
+  }
+
+  @Override
   protected String getMeterNameAndVersion() {
-    return "Suureta v0.0.1";
+    return "Suureta v0.0.2";
   }
 }
