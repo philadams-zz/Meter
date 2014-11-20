@@ -36,7 +36,7 @@
 
   <string name="many_fingers_prompt">Please touch the screen with 1 to 5 fingers to report your current pain intensity level (5 = worst pain possible):</string>
 
-  <string name="tap_tap_prompt">Tap the screen to report your current pain level out of 10 (0 = no pain, 10 = worst pain possible).</string>
+  <string name="tap_tap_prompt">Please report your current pain level (0 = no pain, 10 = worst pain possible) by tapping the screen.</string>
 
   <string name="safe_prompt">Please tap or swipe up/down to change the face such that it best represents your current pain level.</string>
 

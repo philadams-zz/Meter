@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 
 /**
+ * TODO: SAFE crashes on nexus 6 (out of memory)
  */
 public class SAFEView extends View {
 
