@@ -25,7 +25,7 @@
 
   <string name="nrs_prompt">Please indicate your current pain level with the following NRS:</string>
 
-  <string name="suureta_prompt">Please touch-and-hold or pinch the screen to report your current pain level from 0 (no pain) to 10 (worst pain possible):</string>
+  <string name="suureta_prompt">Please touch-and-hold the screen to report your current pain level from 0 (no pain) to 10 (worst pain possible):</string>
 
   <string name="super_vas_prompt">Please indicate your current pain level with the following seek bar:</string>
 
