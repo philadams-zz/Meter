@@ -98,7 +98,7 @@ public class SuperVASPlusView extends View {
     canvas.scale((float) getWidth(), (float) getHeight());
 
     drawScale(canvas);
-    drawSelector(canvas);
+    //drawSelector(canvas);
 
     canvas.restore();
   }

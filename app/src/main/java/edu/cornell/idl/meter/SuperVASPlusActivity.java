@@ -17,4 +17,7 @@ public class SuperVASPlusActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "SuperVASPlus v0.0.1";
   }
+
+  @Override
+  protected void resetView() {}
 }

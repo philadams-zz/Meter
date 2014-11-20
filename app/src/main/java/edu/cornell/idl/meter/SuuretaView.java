@@ -19,9 +19,10 @@ public class SuuretaView extends View {
 
   final static String TAG = "SuuretaView";
 
-  private final int RADIUS_DELTA = 10;
+  private final int RADIUS_DELTA = 5;
   private int radiusDelta;  // larger values grow suureta more quickly
   private Paint circlePaint;
+  private Paint maxCirclePaint;
   private Paint reportedValuePaint;
   private Paint activePointerPaint;
   private PointF activePointer;
@@ -41,7 +42,8 @@ public class SuuretaView extends View {
   private void init() {
     minRadius = 0;
     maxRadius = 1000;
-    radius = (maxRadius - minRadius) / 2;
+    //radius = (maxRadius - minRadius) / 2;
+    radius = minRadius;
     radiusDelta = RADIUS_DELTA;
 
     circlePaint = new Paint();
@@ -50,6 +52,14 @@ public class SuuretaView extends View {
     circlePaint.setStyle(Paint.Style.FILL_AND_STROKE);
     circlePaint.setStrokeJoin(Paint.Join.ROUND);
     circlePaint.setStrokeCap(Paint.Cap.ROUND);
+
+    maxCirclePaint = new Paint();
+    maxCirclePaint.setColor(Color.BLUE);
+    maxCirclePaint.setAntiAlias(true);
+    maxCirclePaint.setStyle(Paint.Style.STROKE);
+    maxCirclePaint.setStrokeWidth(0.01f);
+    maxCirclePaint.setStrokeJoin(Paint.Join.ROUND);
+    maxCirclePaint.setStrokeCap(Paint.Cap.ROUND);
 
     reportedValuePaint = new Paint();
     reportedValuePaint.setAntiAlias(true);
@@ -89,8 +99,8 @@ public class SuuretaView extends View {
     canvas.scale((float) getWidth(), (float) getHeight());
 
     drawSuuretaCircle(canvas);
-    drawReportedValue(canvas);
-    drawActivePointer(canvas);
+    //drawReportedValue(canvas);
+    //drawActivePointer(canvas);
 
     canvas.restore();
   }
@@ -103,6 +113,10 @@ public class SuuretaView extends View {
     RectF bounds = new RectF(0.5f - scaledRadius, 0.5f - scaledRadius * scale, 0.5f + scaledRadius,
         0.5f + scaledRadius * scale);
     canvas.drawOval(bounds, circlePaint);
+    scaledRadius = 0.48f;
+    bounds = new RectF(0.5f - scaledRadius, 0.5f - scaledRadius * scale, 0.5f + scaledRadius,
+        0.5f + scaledRadius * scale);
+    canvas.drawOval(bounds, maxCirclePaint);
   }
 
   protected void drawReportedValue(Canvas canvas) {
@@ -126,7 +140,7 @@ public class SuuretaView extends View {
     float touchX = motionEvent.getX();
     float touchY = motionEvent.getY();
 
-    radiusDelta = (touchY / getHeight() < 0.5) ? RADIUS_DELTA : -1 * RADIUS_DELTA;
+    //radiusDelta = (touchY / getHeight() < 0.5) ? RADIUS_DELTA : -1 * RADIUS_DELTA;
 
     switch (motionEvent.getAction()) {
       case MotionEvent.ACTION_DOWN:
@@ -162,5 +176,10 @@ public class SuuretaView extends View {
 
   public int getProgress() {
     return Utility.linearlyScale(radius, 0, maxRadius, 0, 10);
+  }
+
+  public void reset() {
+    radius = minRadius;
+    invalidate();
   }
 }

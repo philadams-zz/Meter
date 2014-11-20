@@ -145,4 +145,7 @@ public class PAMActivity extends MeterBaseActivity {
   protected String getMeterNameAndVersion() {
     return "PAM v0.0.1";
   }
+
+  @Override
+  protected void resetView() {}
 }
