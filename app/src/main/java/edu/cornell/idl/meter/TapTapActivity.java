@@ -15,6 +15,9 @@ public class TapTapActivity extends MeterBaseActivity {
 
   @Override
   protected String getMeterNameAndVersion() {
-    return "TapTap v0.0.1";
+    return "TapTap v0.0.2";
   }
+
+  @Override
+  protected void resetView() {}
 }
