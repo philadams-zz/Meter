@@ -66,9 +66,9 @@ public class MeterActivity extends Activity {
       startActivityForResult(new Intent(this, SuperVASPlusActivity.class),
           MeterActivity.LAUNCH_SUPER_VAS_PLUS);
     }
-    if (id == R.id.action_pam) {
-      startActivityForResult(new Intent(this, PAMActivity.class), MeterActivity.LAUNCH_PAM);
-    }
+    //if (id == R.id.action_pam) {
+    //  startActivityForResult(new Intent(this, PAMActivity.class), MeterActivity.LAUNCH_PAM);
+    //}
     if (id == R.id.action_many_fingers) {
       startActivityForResult(new Intent(this, ManyFingersActivity.class),
           MeterActivity.LAUNCH_MANY_FINGERS);
