@@ -144,7 +144,7 @@ public class TapTapView extends View {
    * draw an 'out of 10' indicator below the reportedValue
    */
   protected void drawOutOfTen(Canvas canvas) {
-    int xPos = canvas.getWidth();
+    int xPos = (int) (canvas.getWidth() * 0.95f);
     int yPos = (int) (canvas.getHeight() * 0.9f);
     canvas.drawText(outOfTenText, xPos, yPos, outOfTenPaint);
   }
