@@ -8,8 +8,8 @@ import java.util.Random;
 public class MeterOneActivity extends Activity {
 
   private Class meters[] = {
-      ManyFingersActivity.class, NRSActivity.class, PAMActivity.class, SuperVASActivity.class,
-      SuperVASPlusActivity.class, SuuretaActivity.class, TapTapActivity.class, VASActivity.class
+      ManyFingersActivity.class, NRSActivity.class, SuperVASActivity.class, SAFEActivity.class,
+      SuperVASPlusActivity.class, SuuretaActivity.class, TapTapActivity.class
   };
 
   @Override
