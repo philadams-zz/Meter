@@ -3,7 +3,7 @@
 
   <string name="app_name">Meter</string>
 
-  <string name="meter_intro">This is Meter.\n\nMeter\'s various meters (tap the options menu) are usually intended to be called from a remote activity in an ESM app like Ohmage.\n\nMeter is a project by Phil Adams (philadams.net) and the Interaction Design Lab (idl.cornell.edu).</string>
+  <string name="meter_intro">This is Meter.\n\nMeter\'s various meters (tap the options menu) are usually intended to be called from a remote activity in an ESM app like Ohmage.\n\nMeter is a project by Phil Adams (philadams.net) and the Interaction Design Lab (idl.cornell.edu).\n\nDrawn faces image files from: Champion GD, von Baeyer CL, Trieu JD, Goodenough B. Sydney Animated Facial Expressions (SAFE). Electronic resource. Copyright ©1997, Pain Research Unit, Sydney Children's Hospital, Randwick, NSW, Australia. All rights reserved. Used with permission.</string>
   <string name="action_meter_one">MeterOne</string>
   <string name="action_vas">VAS</string>
   <string name="action_nrs">NRS</string>
