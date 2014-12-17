@@ -25,6 +25,7 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_SAFE = 18;
   static final int LAUNCH_PHOTOS_PEOPLE = 19;
   static final int LAUNCH_PHOTOS_LANDSCAPES = 20;
+  static final int LAUNCH_NUMBER_PICKER_PLUS = 21;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,9 @@ public class MeterActivity extends Activity {
     }
     if (id == R.id.action_photos_landscape) {
       startActivityForResult(new Intent(this, PhotosLandscapesActivity.class), MeterActivity.LAUNCH_PHOTOS_LANDSCAPES);
+    }
+    if (id == R.id.action_number_picker_plus) {
+      startActivityForResult(new Intent(this, NumberPickerPlusActivity.class), MeterActivity.LAUNCH_NUMBER_PICKER_PLUS);
     }
     return super.onOptionsItemSelected(item);
   }
