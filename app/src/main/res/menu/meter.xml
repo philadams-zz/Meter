@@ -47,6 +47,11 @@
       android:orderInCategory="100"
       android:showAsAction="never" />
   <item
+      android:id="@+id/action_number_picker_plus"
+      android:title="@string/action_number_picker_plus"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
+  <item
       android:id="@+id/action_safe"
       android:title="@string/action_safe"
       android:orderInCategory="100"
