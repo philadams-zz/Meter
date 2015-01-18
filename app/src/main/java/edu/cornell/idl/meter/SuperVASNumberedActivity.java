@@ -15,7 +15,7 @@ public class SuperVASNumberedActivity extends MeterBaseActivity {
 
   @Override
   protected String getMeterNameAndVersion() {
-    return "SuperVASNumberedActivity v0.0.1";
+    return "SuperVASNumbered v0.0.1";
   }
 
   @Override

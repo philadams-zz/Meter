@@ -32,6 +32,7 @@ public class SuperVASNumberedView extends View {
   private float minTargetY = scaleY1;
   private float maxTargetY = scaleY2;
 
+  // reported value numeral
   private Paint reportedValuePaint;
   private float reportedValueX = 200f;
   private float reportedValueY = 200f;
