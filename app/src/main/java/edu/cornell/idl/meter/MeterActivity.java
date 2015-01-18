@@ -26,6 +26,7 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_PHOTOS_PEOPLE = 19;
   static final int LAUNCH_PHOTOS_LANDSCAPES = 20;
   static final int LAUNCH_NUMBER_PICKER_PLUS = 21;
+  static final int LAUNCH_SUPERVAS_NUMBERED = 22;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +90,9 @@ public class MeterActivity extends Activity {
     if (id == R.id.action_number_picker_plus) {
       startActivityForResult(new Intent(this, NumberPickerPlusActivity.class), MeterActivity.LAUNCH_NUMBER_PICKER_PLUS);
     }
+    if (id == R.id.action_supervas_numbered) {
+      startActivityForResult(new Intent(this, SuperVASNumberedActivity.class), MeterActivity.LAUNCH_SUPERVAS_NUMBERED);
+    }
     return super.onOptionsItemSelected(item);
   }
 
@@ -98,13 +102,13 @@ public class MeterActivity extends Activity {
       float reportedPainLevel = data.getFloatExtra(Constants.OHMAGE_SCORE_KEY, -1);
       double secondsToComplete = data.getDoubleExtra("secondsToComplete", -1);
       String meterNameAndVersion = data.getStringExtra("meterNameAndVersion");
-      Toast.makeText(this, "Pain level submitted", Toast.LENGTH_SHORT).show();
-      //Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel),
-      //    Toast.LENGTH_SHORT).show();
-      //Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion),
-      //    Toast.LENGTH_SHORT).show();
-      //Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
-      //    Toast.LENGTH_SHORT).show();
+      //Toast.makeText(this, "Pain level submitted", Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel),
+          Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion),
+          Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
+          Toast.LENGTH_SHORT).show();
     }
   }
 }
