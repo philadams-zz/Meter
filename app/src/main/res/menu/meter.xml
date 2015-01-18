@@ -7,6 +7,11 @@
       android:orderInCategory="100"
       android:showAsAction="never" />
   <item
+      android:id="@+id/action_safe_slider"
+      android:title="@string/action_safe_slider"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
+  <item
       android:id="@+id/action_number_picker_plus"
       android:title="@string/action_number_picker_plus"
       android:orderInCategory="100"
