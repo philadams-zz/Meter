@@ -16,6 +16,10 @@ public class MeterOneActivity extends Activity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    // TODO:phil launch the chosen activity, and return result.
+    // we do it this way to enable changing Meter.app without needing to reconfigure the
+    // Ohmage surveys (slightly annoying, but you work with what you have).
+
     // launch a randomly selected meter, capture its response, and return data to calling activity
     Class meter = meters[(new Random()).nextInt(meters.length)];
     Intent intent = new Intent(this, meter);

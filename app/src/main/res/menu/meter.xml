@@ -2,8 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.cornell.idl.meter.MeterActivity">
   <item
-      android:id="@+id/action_meter_one"
-      android:title="@string/action_meter_one"
+      android:id="@+id/action_supervas_numbered"
+      android:title="@string/action_supervas_numbered"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
+  <item
+      android:id="@+id/action_number_picker_plus"
+      android:title="@string/action_number_picker_plus"
       android:orderInCategory="100"
       android:showAsAction="never" />
   <item
@@ -47,11 +52,6 @@
       android:orderInCategory="100"
       android:showAsAction="never" />
   <item
-      android:id="@+id/action_number_picker_plus"
-      android:title="@string/action_number_picker_plus"
-      android:orderInCategory="100"
-      android:showAsAction="never" />
-  <item
       android:id="@+id/action_safe"
       android:title="@string/action_safe"
       android:orderInCategory="100"
@@ -64,6 +64,11 @@
   <item
       android:id="@+id/action_photos_landscape"
       android:title="@string/action_photos_landscape"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
+  <item
+      android:id="@+id/action_meter_one"
+      android:title="@string/action_meter_one"
       android:orderInCategory="100"
       android:showAsAction="never" />
 </menu>
