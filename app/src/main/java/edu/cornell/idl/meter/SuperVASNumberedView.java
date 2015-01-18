@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.view.View;
  */
 public class SuperVASNumberedView extends View {
 
-  final static String TAG = "SuperVASView";
+  final static String TAG = "SuperVASNumberedView";
 
   // selector knob/circle
   private Paint selectorInnerPaint;
@@ -28,8 +29,12 @@ public class SuperVASNumberedView extends View {
   private float selectorTargetY = 100f;
   private float padding = radius;  // offset from the edges of the scale
 
-  private float minTargetY = scaleY1 + padding + radius/2;
-  private float maxTargetY = scaleY2 + radius/2;
+  private float minTargetY = scaleY1;
+  private float maxTargetY = scaleY2;
+
+  private Paint reportedValuePaint;
+  private float reportedValueX = 200f;
+  private float reportedValueY = 200f;
 
   public SuperVASNumberedView(Context context) {
     this(context, null);
@@ -70,6 +75,15 @@ public class SuperVASNumberedView extends View {
     selectorOuterPaint.setStrokeWidth(4);
     selectorOuterPaint.setColor(getResources().getColor(android.R.color.holo_blue_light));
     selectorOuterPaint.setAlpha(125);  // must come after setColor()
+
+    reportedValuePaint = new Paint();
+    reportedValuePaint.setAntiAlias(true);
+    reportedValuePaint.setColor(Color.parseColor("#222222"));
+    reportedValuePaint.setTypeface(Typeface.SANS_SERIF);
+    reportedValuePaint.setTypeface(Typeface.DEFAULT_BOLD);
+    reportedValuePaint.setStyle(Paint.Style.FILL_AND_STROKE);
+    reportedValuePaint.setTextAlign(Paint.Align.CENTER);
+    reportedValuePaint.setTextSize(76f);
   }
 
   /**
@@ -79,6 +93,7 @@ public class SuperVASNumberedView extends View {
   protected void onDraw(Canvas canvas) {
     drawScaleBar(canvas);
     drawSelectorKnob(canvas);
+    drawReportedValue(canvas);
   }
 
   /**
@@ -102,30 +117,29 @@ public class SuperVASNumberedView extends View {
 
   /**
    * onTouchEvent()
+   * when the user touches the screen, update the selector to point where the user taps
    */
   public boolean onTouchEvent(MotionEvent motionEvent) {
     switch (motionEvent.getAction()) {
-      case MotionEvent.ACTION_DOWN:  // indicate user touching screen?
+      case MotionEvent.ACTION_DOWN:  // TODO:philadams indicate user touching screen??? haptics?
         return true;
       case MotionEvent.ACTION_MOVE:
         setSelectorTarget(motionEvent.getY());
         return true;
       case MotionEvent.ACTION_UP:
-        setSelectorTarget(motionEvent.getY());  // update the selector to point at where user clicked
+        setSelectorTarget(motionEvent.getY());
         return true;
       default:
         return super.onTouchEvent(motionEvent);
     }
   }
 
-  ///**
-  // * drawReportedValue(Canvas canvas)
-  // */
-  //protected void drawReportedValue(Canvas canvas) {
-  //  int xPos = canvas.getWidth() / 2;
-  //  int yPos = (int) ((canvas.getHeight() / 2) - getVerticalCenterOffsetForPaint(reportedValuePaint));
-  //  canvas.drawText(String.valueOf(reportedValue), xPos, yPos, reportedValuePaint);
-  //}
+  /**
+  * drawReportedValue(Canvas canvas)
+  */
+  protected void drawReportedValue(Canvas canvas) {
+    canvas.drawText(String.valueOf(getProgress()), reportedValueX, reportedValueY, reportedValuePaint);
+  }
 
   private void setSelectorTarget(float target) {
     selectorTargetY = target;
@@ -147,15 +161,15 @@ public class SuperVASNumberedView extends View {
    */
   @Override
   public void onSizeChanged(int w, int h, int oldw, int oldh) {
-    scaleX = 0.2f * w;
+    scaleX = 0.15f * w;
     scaleY1 = 0 + padding;
     scaleY2 = h - padding;
-    selectorTargetY = h / 2;
+    selectorTargetY = 0.8f * h;
     minTargetY = scaleY1;
     maxTargetY = scaleY2;
-    //reportedValuePaint.setTextSize(0.9f * w);
-    //outOfTenPaint.setTextSize(0.2f * w);
-    //plusMinusPaint.setTextSize(0.2f * w);
+    reportedValuePaint.setTextSize(0.7f * w);
+    reportedValueX = 0.55f * w;
+    reportedValueY = ((h / 2) - getVerticalCenterOffsetForPaint(reportedValuePaint));
   }
 
   /**
@@ -164,12 +178,8 @@ public class SuperVASNumberedView extends View {
    */
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
-    int widthMode = MeasureSpec.getMode(widthMeasureSpec);
     int widthDim = MeasureSpec.getSize(widthMeasureSpec);
-    int heightMode = MeasureSpec.getMode(heightMeasureSpec);
     int heightDim = MeasureSpec.getSize(heightMeasureSpec);
-
     setMeasuredDimension(widthDim, heightDim);
   }
 
