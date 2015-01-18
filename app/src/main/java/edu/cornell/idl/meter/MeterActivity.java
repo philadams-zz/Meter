@@ -27,6 +27,7 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_PHOTOS_LANDSCAPES = 20;
   static final int LAUNCH_NUMBER_PICKER_PLUS = 21;
   static final int LAUNCH_SUPERVAS_NUMBERED = 22;
+  static final int LAUNCH_SAFE_SLIDER = 23;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +93,9 @@ public class MeterActivity extends Activity {
     }
     if (id == R.id.action_supervas_numbered) {
       startActivityForResult(new Intent(this, SuperVASNumberedActivity.class), MeterActivity.LAUNCH_SUPERVAS_NUMBERED);
+    }
+    if (id == R.id.action_safe_slider) {
+      startActivityForResult(new Intent(this, SAFESliderActivity.class), MeterActivity.LAUNCH_SAFE_SLIDER);
     }
     return super.onOptionsItemSelected(item);
   }

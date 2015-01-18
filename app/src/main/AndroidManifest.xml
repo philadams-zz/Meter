@@ -149,7 +149,7 @@
     </activity>
 
     <activity
-        android:name=".SlideTenActivity"
+        android:name=".SuperVASNumberedActivity"
         android:label="@string/title_activity_default"
         android:theme="@style/MeterTheme">
       <intent-filter>
@@ -158,8 +158,9 @@
       </intent-filter>
     </activity>
 
+
     <activity
-        android:name=".SuperVASNumberedActivity"
+        android:name=".SAFESliderActivity"
         android:label="@string/title_activity_default"
         android:theme="@style/MeterTheme">
       <intent-filter>
