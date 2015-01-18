@@ -11,9 +11,10 @@
     tools:context="edu.cornell.idl.meter.SuperVASNumberedActivity">
 
   <TextView
-      android:text="@string/super_vas_prompt"
+      android:text="@string/vas_prompt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_gravity="center"
       android:textStyle="italic"/>
 
   <TextView

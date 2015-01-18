@@ -17,13 +17,13 @@
   <string name="action_safe">SAFE</string>
   <string name="action_photos_people">PhotosPeople</string>
   <string name="action_photos_landscape">PhotosLandscape</string>
-  <string name="action_supervas_numbered">SuperVAS Numbered</string>
+  <string name="action_supervas_numbered">SuperVASNumbered</string>
 
   <string name="button_submit_response">Submit</string>
 
   <string name="slide_ten_prompt">Please indicate your current pain level from 0 (no pain) to 10 (worst pain imaginable) using the following slider:</string>
 
-  <string name="vas_prompt">Please indicate your current pain level with the following seek bar:</string>
+  <string name="vas_prompt">Please indicate your current pain level</string>
   <string name="vas_anchor_low">No pain at all</string>
   <string name="vas_anchor_high">Worst pain imaginable</string>
 
