@@ -76,4 +76,9 @@
       android:title="@string/action_meter_one"
       android:orderInCategory="100"
       android:showAsAction="never" />
+  <item
+      android:id="@+id/action_meter_two"
+      android:title="@string/action_meter_two"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
 </menu>

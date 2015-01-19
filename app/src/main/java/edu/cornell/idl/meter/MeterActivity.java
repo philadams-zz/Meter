@@ -14,6 +14,7 @@ public class MeterActivity extends Activity {
 
   static final String TAG = "MeterActivity";
   static final int LAUNCH_METER_ONE = 1;
+  static final int LAUNCH_METER_TWO = 2;
   static final int LAUNCH_VAS = 11;
   static final int LAUNCH_NRS = 12;
   static final int LAUNCH_SUURETA = 13;
@@ -96,6 +97,9 @@ public class MeterActivity extends Activity {
     }
     if (id == R.id.action_safe_slider) {
       startActivityForResult(new Intent(this, SAFESliderActivity.class), MeterActivity.LAUNCH_SAFE_SLIDER);
+    }
+    if (id == R.id.action_meter_two) {
+      startActivityForResult(new Intent(this, MeterTwoActivity.class), MeterActivity.LAUNCH_METER_TWO);
     }
     return super.onOptionsItemSelected(item);
   }
