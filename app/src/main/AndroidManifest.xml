@@ -28,6 +28,17 @@
       </intent-filter>
     </activity>
 
+
+    <activity
+        android:name=".MeterTwoActivity"
+        android:label="@string/title_activity_default"
+        android:theme="@style/MeterTheme">
+      <intent-filter>
+        <action android:name="edu.cornell.idl.meter.ACTION_SELF_REPORT" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
     <activity
         android:name=".VASActivity"
         android:label="@string/title_activity_default"
@@ -130,6 +141,37 @@
 
     <activity
         android:name=".PhotosLandscapesActivity"
+        android:label="@string/title_activity_default"
+        android:theme="@style/MeterTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".NumberPickerPlusActivity"
+        android:label="@string/title_activity_default"
+        android:theme="@style/MeterTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".SuperVASNumberedActivity"
+        android:label="@string/title_activity_default"
+        android:theme="@style/MeterTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
+
+    <activity
+        android:name=".SAFESliderActivity"
         android:label="@string/title_activity_default"
         android:theme="@style/MeterTheme">
       <intent-filter>

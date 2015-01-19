@@ -1,3 +1,1 @@
-todo
-- make the photosXActivities better!
-- rename photoslandscape to photoslandscapes in all files
+- TODO selected measure 3: NRSBig (magnifying animation?)

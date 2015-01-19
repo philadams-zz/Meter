@@ -14,6 +14,7 @@ public class MeterActivity extends Activity {
 
   static final String TAG = "MeterActivity";
   static final int LAUNCH_METER_ONE = 1;
+  static final int LAUNCH_METER_TWO = 2;
   static final int LAUNCH_VAS = 11;
   static final int LAUNCH_NRS = 12;
   static final int LAUNCH_SUURETA = 13;
@@ -25,6 +26,9 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_SAFE = 18;
   static final int LAUNCH_PHOTOS_PEOPLE = 19;
   static final int LAUNCH_PHOTOS_LANDSCAPES = 20;
+  static final int LAUNCH_NUMBER_PICKER_PLUS = 21;
+  static final int LAUNCH_SUPERVAS_NUMBERED = 22;
+  static final int LAUNCH_SAFE_SLIDER = 23;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +89,18 @@ public class MeterActivity extends Activity {
     if (id == R.id.action_photos_landscape) {
       startActivityForResult(new Intent(this, PhotosLandscapesActivity.class), MeterActivity.LAUNCH_PHOTOS_LANDSCAPES);
     }
+    if (id == R.id.action_number_picker_plus) {
+      startActivityForResult(new Intent(this, NumberPickerPlusActivity.class), MeterActivity.LAUNCH_NUMBER_PICKER_PLUS);
+    }
+    if (id == R.id.action_supervas_numbered) {
+      startActivityForResult(new Intent(this, SuperVASNumberedActivity.class), MeterActivity.LAUNCH_SUPERVAS_NUMBERED);
+    }
+    if (id == R.id.action_safe_slider) {
+      startActivityForResult(new Intent(this, SAFESliderActivity.class), MeterActivity.LAUNCH_SAFE_SLIDER);
+    }
+    if (id == R.id.action_meter_two) {
+      startActivityForResult(new Intent(this, MeterTwoActivity.class), MeterActivity.LAUNCH_METER_TWO);
+    }
     return super.onOptionsItemSelected(item);
   }
 
@@ -94,13 +110,13 @@ public class MeterActivity extends Activity {
       float reportedPainLevel = data.getFloatExtra(Constants.OHMAGE_SCORE_KEY, -1);
       double secondsToComplete = data.getDoubleExtra("secondsToComplete", -1);
       String meterNameAndVersion = data.getStringExtra("meterNameAndVersion");
-      Toast.makeText(this, "Pain level submitted", Toast.LENGTH_SHORT).show();
-      //Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel),
-      //    Toast.LENGTH_SHORT).show();
-      //Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion),
-      //    Toast.LENGTH_SHORT).show();
-      //Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
-      //    Toast.LENGTH_SHORT).show();
+      //Toast.makeText(this, "Pain level submitted", Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("Reported pain level: %.0f", reportedPainLevel),
+          Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("meter name/version: %s", meterNameAndVersion),
+          Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
+          Toast.LENGTH_SHORT).show();
     }
   }
 }
