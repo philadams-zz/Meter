@@ -1,3 +1,1 @@
-- TODO selected measure 1: SuperVasNumbered
-- TODO selected measure 2: SAFESlider
-- TODO selected measure 3: NRSBig
+- TODO selected measure 3: NRSBig (magnifying animation?)
