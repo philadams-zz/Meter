@@ -99,7 +99,6 @@ public class SuperVASNumberedView extends View {
 
   /**
    * draw scale (vertical line)
-   * @param canvas
    */
   private void drawScaleBar(Canvas canvas) {
     canvas.drawLine(scaleX, scaleY1, scaleX, selectorTargetY, scaleUnselectedPaint);
@@ -108,13 +107,11 @@ public class SuperVASNumberedView extends View {
 
   /**
    * draw selector (the little knob/circle thing)
-   * @param canvas
    */
   private void drawSelectorKnob(Canvas canvas) {
     canvas.drawCircle(scaleX, selectorTargetY, radius, selectorOuterPaint);
     canvas.drawCircle(scaleX, selectorTargetY, radius - 35, selectorInnerPaint);
   }
-
 
   /**
    * onTouchEvent()
@@ -136,10 +133,11 @@ public class SuperVASNumberedView extends View {
   }
 
   /**
-  * drawReportedValue(Canvas canvas)
-  */
+   * drawReportedValue(Canvas canvas)
+   */
   protected void drawReportedValue(Canvas canvas) {
-    canvas.drawText(String.valueOf(getProgress()), reportedValueX, reportedValueY, reportedValuePaint);
+    canvas.drawText(String.valueOf(getProgress()), reportedValueX, reportedValueY,
+        reportedValuePaint);
   }
 
   private void setSelectorTarget(float target) {

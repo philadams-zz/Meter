@@ -37,7 +37,6 @@ public class PhotosLandscapesActivity extends MeterBaseActivity {
         }
       });
     }
-
   }
 
   @Override
@@ -56,5 +55,6 @@ public class PhotosLandscapesActivity extends MeterBaseActivity {
   }
 
   @Override
-  protected void resetView() {}
+  protected void resetView() {
+  }
 }

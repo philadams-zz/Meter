@@ -19,5 +19,6 @@ public class ManyFingersActivity extends MeterBaseActivity {
   }
 
   @Override
-  protected void resetView() {}
+  protected void resetView() {
+  }
 }

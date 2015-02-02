@@ -9,7 +9,8 @@ public class SuperVASNumberedActivity extends MeterBaseActivity {
 
   @Override
   protected float getReportedScore() {
-    SuperVASNumberedView superVASNumberedView = (SuperVASNumberedView) findViewById(R.id.supervas_numbered_view);
+    SuperVASNumberedView superVASNumberedView =
+        (SuperVASNumberedView) findViewById(R.id.supervas_numbered_view);
     return (float) superVASNumberedView.getProgress();
   }
 
@@ -19,5 +20,6 @@ public class SuperVASNumberedActivity extends MeterBaseActivity {
   }
 
   @Override
-  protected void resetView() {}
+  protected void resetView() {
+  }
 }

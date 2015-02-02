@@ -105,7 +105,6 @@ public class SAFESliderView extends View {
 
   /**
    * draw scale (vertical line)
-   * @param canvas
    */
   private void drawScaleBar(Canvas canvas) {
     canvas.drawLine(scaleX, scaleY1, scaleX, selectorTargetY, scaleUnselectedPaint);
@@ -114,7 +113,6 @@ public class SAFESliderView extends View {
 
   /**
    * draw selector (the little knob/circle thing)
-   * @param canvas
    */
   private void drawSelectorKnob(Canvas canvas) {
     canvas.drawCircle(scaleX, selectorTargetY, radius, selectorOuterPaint);
@@ -123,7 +121,6 @@ public class SAFESliderView extends View {
 
   /**
    * draw one of the SAFE faces, based on where the slider's currently pointing
-   * @param canvas
    */
   private void drawFace(Canvas canvas) {
     canvas.drawBitmap(faces[face_to_show], null, faceRect, facePaint);
@@ -189,8 +186,6 @@ public class SAFESliderView extends View {
 
   /**
    * given position on screen, return the appropriate SAFE face index
-   * @param position
-   * @return
    */
   private int getSAFEFaceIndexByScreenPosition(float position) {
     return NUM_FACES - 1 - Utility.clamp(Math.round(position * NUM_FACES - 1), 0, NUM_FACES - 1);

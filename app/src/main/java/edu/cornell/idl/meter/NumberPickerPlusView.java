@@ -149,14 +149,16 @@ public class NumberPickerPlusView extends View {
    */
   protected void drawTapRegions(Canvas canvas) {
     // tap up
-    canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight() / 2 - 10, tapUpPaint);  // background
+    canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight() / 2 - 10,
+        tapUpPaint);  // background
     int plusXPos = (int) (canvas.getWidth() * 0.05f);
     int plusYPos =
         (int) ((canvas.getHeight() * 0.1f) - getVerticalCenterOffsetForPaint(plusMinusPaint));
     canvas.drawText("+", plusXPos, plusYPos, plusMinusPaint);  // plus
 
     // tap down
-    canvas.drawRect(0, canvas.getHeight() / 2 + 10, canvas.getWidth(), canvas.getHeight(), tapDownPaint);
+    canvas.drawRect(0, canvas.getHeight() / 2 + 10, canvas.getWidth(), canvas.getHeight(),
+        tapDownPaint);
     int minusXPos = plusXPos;
     int minusYPos =
         (int) ((canvas.getHeight() * 0.9f) - getVerticalCenterOffsetForPaint(plusMinusPaint));
@@ -177,7 +179,8 @@ public class NumberPickerPlusView extends View {
    */
   protected void drawReportedValue(Canvas canvas) {
     int xPos = canvas.getWidth() / 2;
-    int yPos = (int) ((canvas.getHeight() / 2) - getVerticalCenterOffsetForPaint(reportedValuePaint));
+    int yPos =
+        (int) ((canvas.getHeight() / 2) - getVerticalCenterOffsetForPaint(reportedValuePaint));
     canvas.drawText(String.valueOf(reportedValue), xPos, yPos, reportedValuePaint);
   }
 

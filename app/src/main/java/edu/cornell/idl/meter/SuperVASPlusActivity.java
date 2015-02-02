@@ -19,5 +19,6 @@ public class SuperVASPlusActivity extends MeterBaseActivity {
   }
 
   @Override
-  protected void resetView() {}
+  protected void resetView() {
+  }
 }

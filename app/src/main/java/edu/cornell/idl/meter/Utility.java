@@ -12,9 +12,7 @@ public class Utility {
     return (((x - oldMin) * newRange) / oldRange) + newMin;
   }
 
-
-  public static int linearlyScale(int x, int oldMin, int oldMax, int newMin,
-      int newMax) {
+  public static int linearlyScale(int x, int oldMin, int oldMax, int newMin, int newMax) {
     float oldRange = oldMax - oldMin;
     float newRange = newMax - newMin;
     return Math.round((((x - oldMin) * newRange) / oldRange) + newMin);

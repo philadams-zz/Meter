@@ -57,7 +57,6 @@ public class SAFEView extends View {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
   /**

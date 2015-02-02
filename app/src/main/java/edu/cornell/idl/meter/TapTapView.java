@@ -137,7 +137,8 @@ public class TapTapView extends View {
    */
   protected void drawTapRegions(Canvas canvas) {
     canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight() / 2 - 10, tapUpPaint);
-    canvas.drawRect(0, canvas.getHeight() / 2 + 10, canvas.getWidth(), canvas.getHeight(), tapDownPaint);
+    canvas.drawRect(0, canvas.getHeight() / 2 + 10, canvas.getWidth(), canvas.getHeight(),
+        tapDownPaint);
   }
 
   /**
@@ -154,7 +155,8 @@ public class TapTapView extends View {
    */
   protected void drawReportedValue(Canvas canvas) {
     int xPos = canvas.getWidth() / 2;
-    int yPos = (int) ((canvas.getHeight() / 2) - ((reportedValuePaint.descent() + reportedValuePaint.ascent()) /2));
+    int yPos = (int) ((canvas.getHeight() / 2) - ((reportedValuePaint.descent()
+        + reportedValuePaint.ascent()) / 2));
     canvas.drawText(String.valueOf(reportedValue), xPos, yPos, reportedValuePaint);
   }
 
