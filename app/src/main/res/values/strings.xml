@@ -20,6 +20,7 @@
   <string name="action_photos_landscape">PhotosLandscape</string>
   <string name="action_supervas_numbered">SuperVASNumbered</string>
   <string name="action_safe_slider">SafeSlider</string>
+  <string name="action_notification_vrs">NotifyVRS</string>
 
   <string name="button_submit_response">Submit</string>
 
@@ -47,6 +48,10 @@
   <string name="number_picker_plus_prompt">Please report your current pain level (0 = no pain, 10 = worst pain possible) by tapping "+" or "-" on the screen.</string>
 
   <string name="safe_prompt">Please tap or swipe up/down to change the face such that it best represents your current pain level.</string>
+
+  <string name="notify_action_no_pain">No pain</string>
+  <string name="notify_action_some_pain">Some pain</string>
+  <string name="notify_action_much_pain">Much pain</string>
 
   <string name="title_activity_default">Meter meter</string>
   <string name="hello_world">Hello world!</string>

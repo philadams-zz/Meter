@@ -169,7 +169,6 @@
       </intent-filter>
     </activity>
 
-
     <activity
         android:name=".SAFESliderActivity"
         android:label="@string/title_activity_default"
@@ -179,6 +178,8 @@
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
+
+    <receiver android:name=".HandleNotificationActionReceiver" />
 
   </application>
 

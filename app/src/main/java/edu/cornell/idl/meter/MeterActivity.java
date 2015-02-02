@@ -1,6 +1,10 @@
 package edu.cornell.idl.meter;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +17,7 @@ import android.widget.Toast;
 public class MeterActivity extends Activity {
 
   static final String TAG = "MeterActivity";
+
   static final int LAUNCH_METER_ONE = 1;
   static final int LAUNCH_METER_TWO = 2;
   static final int LAUNCH_VAS = 11;
@@ -29,6 +34,8 @@ public class MeterActivity extends Activity {
   static final int LAUNCH_NUMBER_PICKER_PLUS = 21;
   static final int LAUNCH_SUPERVAS_NUMBERED = 22;
   static final int LAUNCH_SAFE_SLIDER = 23;
+
+  private NotificationManager mNotificationManager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -84,22 +91,31 @@ public class MeterActivity extends Activity {
       startActivityForResult(new Intent(this, SAFEActivity.class), MeterActivity.LAUNCH_SAFE);
     }
     if (id == R.id.action_photos_people) {
-      startActivityForResult(new Intent(this, PhotosPeopleActivity.class), MeterActivity.LAUNCH_PHOTOS_PEOPLE);
+      startActivityForResult(new Intent(this, PhotosPeopleActivity.class),
+          MeterActivity.LAUNCH_PHOTOS_PEOPLE);
     }
     if (id == R.id.action_photos_landscape) {
-      startActivityForResult(new Intent(this, PhotosLandscapesActivity.class), MeterActivity.LAUNCH_PHOTOS_LANDSCAPES);
+      startActivityForResult(new Intent(this, PhotosLandscapesActivity.class),
+          MeterActivity.LAUNCH_PHOTOS_LANDSCAPES);
     }
     if (id == R.id.action_number_picker_plus) {
-      startActivityForResult(new Intent(this, NumberPickerPlusActivity.class), MeterActivity.LAUNCH_NUMBER_PICKER_PLUS);
+      startActivityForResult(new Intent(this, NumberPickerPlusActivity.class),
+          MeterActivity.LAUNCH_NUMBER_PICKER_PLUS);
     }
     if (id == R.id.action_supervas_numbered) {
-      startActivityForResult(new Intent(this, SuperVASNumberedActivity.class), MeterActivity.LAUNCH_SUPERVAS_NUMBERED);
+      startActivityForResult(new Intent(this, SuperVASNumberedActivity.class),
+          MeterActivity.LAUNCH_SUPERVAS_NUMBERED);
     }
     if (id == R.id.action_safe_slider) {
-      startActivityForResult(new Intent(this, SAFESliderActivity.class), MeterActivity.LAUNCH_SAFE_SLIDER);
+      startActivityForResult(new Intent(this, SAFESliderActivity.class),
+          MeterActivity.LAUNCH_SAFE_SLIDER);
     }
     if (id == R.id.action_meter_two) {
-      startActivityForResult(new Intent(this, MeterTwoActivity.class), MeterActivity.LAUNCH_METER_TWO);
+      startActivityForResult(new Intent(this, MeterTwoActivity.class),
+          MeterActivity.LAUNCH_METER_TWO);
+    }
+    if (id == R.id.action_notification_vrs) {
+      actionNotificationVRS();
     }
     return super.onOptionsItemSelected(item);
   }
@@ -118,5 +134,43 @@ public class MeterActivity extends Activity {
       Toast.makeText(this, String.format("Seconds to complete: %.2f", secondsToComplete),
           Toast.LENGTH_SHORT).show();
     }
+  }
+
+  /**
+   * Shows a simple 3-category VRS in the big notification.
+   * If the smaller notification is shown, or the actions aren't clicked in the big one,
+   * the NotificationVRS simply calls through to another meter.
+   */
+  private void actionNotificationVRS() {
+    if (mNotificationManager == null) {
+      mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+    }
+
+    Intent resultIntent = new Intent(this, MeterActivity.class);
+    PendingIntent resultPendingIntent =
+        PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+    Intent noPainIntent = new Intent(this, HandleNotificationActionReceiver.class);
+    noPainIntent.putExtra(Constants.NOTIFY_ACTION_PAIN_VALUE, 0);
+    PendingIntent noPainPendingIntent = PendingIntent.getBroadcast(this, 0, noPainIntent, PendingIntent.FLAG_ONE_SHOT);
+
+    Intent somePainIntent = new Intent(this, HandleNotificationActionReceiver.class);
+    somePainIntent.putExtra(Constants.NOTIFY_ACTION_PAIN_VALUE, 5);
+    PendingIntent somePainPendingIntent = PendingIntent.getBroadcast(this, 1, somePainIntent, PendingIntent.FLAG_ONE_SHOT);
+
+    Intent muchPainIntent = new Intent(this, HandleNotificationActionReceiver.class);
+    muchPainIntent.putExtra(Constants.NOTIFY_ACTION_PAIN_VALUE, 10);
+    PendingIntent muchPainPendingIntent = PendingIntent.getBroadcast(this, 2, muchPainIntent, PendingIntent.FLAG_ONE_SHOT);
+
+    Notification.Builder mBuilder =
+        new Notification.Builder(this).setSmallIcon(R.drawable.ic_launcher)
+            .setContentTitle("Time to report!")
+            .setContentText("Right now, how much pain are you in?")
+            .setContentIntent(resultPendingIntent)
+            .setAutoCancel(true)
+            .addAction(0, getString(R.string.notify_action_no_pain), noPainPendingIntent)
+            .addAction(0, getString(R.string.notify_action_some_pain), somePainPendingIntent)
+            .addAction(0, getString(R.string.notify_action_much_pain), muchPainPendingIntent);
+    mNotificationManager.notify(Constants.NOTIFY_VRS, mBuilder.build());
   }
 }
