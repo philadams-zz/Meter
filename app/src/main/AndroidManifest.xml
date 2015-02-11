@@ -179,7 +179,8 @@
       </intent-filter>
     </activity>
 
-    <receiver android:name=".HandleNotificationActionReceiver" />
+    <receiver android:name=".NotificationNrsReceiver" />
+    <receiver android:name=".NotificationVrsReceiver" />
 
   </application>
 

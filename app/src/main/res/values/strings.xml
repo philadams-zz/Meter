@@ -21,6 +21,7 @@
   <string name="action_supervas_numbered">SuperVASNumbered</string>
   <string name="action_safe_slider">SafeSlider</string>
   <string name="action_notification_vrs">NotifyVRS</string>
+  <string name="action_notification_nrs">NotifyNRS</string>
 
   <string name="button_submit_response">Submit</string>
 

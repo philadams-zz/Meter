@@ -117,6 +117,9 @@ public class MeterActivity extends Activity {
     if (id == R.id.action_notification_vrs) {
       actionNotificationVRS();
     }
+    if (id == R.id.action_notification_nrs) {
+      actionNotificationNRS();
+    }
     return super.onOptionsItemSelected(item);
   }
 
@@ -146,21 +149,24 @@ public class MeterActivity extends Activity {
       mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
-    Intent resultIntent = new Intent(this, MeterActivity.class);
+    Intent resultIntent = new Intent(this, SAFESliderActivity.class);
     PendingIntent resultPendingIntent =
-        PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent.getActivity(this, 100, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-    Intent noPainIntent = new Intent(this, HandleNotificationActionReceiver.class);
+    Intent noPainIntent = new Intent(this, NotificationVrsReceiver.class);
     noPainIntent.putExtra(Constants.NOTIFY_ACTION_PAIN_VALUE, 0);
-    PendingIntent noPainPendingIntent = PendingIntent.getBroadcast(this, 0, noPainIntent, PendingIntent.FLAG_ONE_SHOT);
+    PendingIntent noPainPendingIntent =
+        PendingIntent.getBroadcast(this, 101, noPainIntent, PendingIntent.FLAG_ONE_SHOT);
 
-    Intent somePainIntent = new Intent(this, HandleNotificationActionReceiver.class);
+    Intent somePainIntent = new Intent(this, NotificationVrsReceiver.class);
     somePainIntent.putExtra(Constants.NOTIFY_ACTION_PAIN_VALUE, 5);
-    PendingIntent somePainPendingIntent = PendingIntent.getBroadcast(this, 1, somePainIntent, PendingIntent.FLAG_ONE_SHOT);
+    PendingIntent somePainPendingIntent =
+        PendingIntent.getBroadcast(this, 102, somePainIntent, PendingIntent.FLAG_ONE_SHOT);
 
-    Intent muchPainIntent = new Intent(this, HandleNotificationActionReceiver.class);
+    Intent muchPainIntent = new Intent(this, NotificationVrsReceiver.class);
     muchPainIntent.putExtra(Constants.NOTIFY_ACTION_PAIN_VALUE, 10);
-    PendingIntent muchPainPendingIntent = PendingIntent.getBroadcast(this, 2, muchPainIntent, PendingIntent.FLAG_ONE_SHOT);
+    PendingIntent muchPainPendingIntent =
+        PendingIntent.getBroadcast(this, 103, muchPainIntent, PendingIntent.FLAG_ONE_SHOT);
 
     Notification.Builder mBuilder =
         new Notification.Builder(this).setSmallIcon(R.drawable.ic_launcher)
@@ -172,5 +178,18 @@ public class MeterActivity extends Activity {
             .addAction(0, getString(R.string.notify_action_some_pain), somePainPendingIntent)
             .addAction(0, getString(R.string.notify_action_much_pain), muchPainPendingIntent);
     mNotificationManager.notify(Constants.NOTIFY_VRS, mBuilder.build());
+  }
+
+  /**
+   * Shows a simple NRS-n in the big notification.
+   * If the smaller notification is shown, or the actions aren't clicked in the big one,
+   * the NotificationVRS simply calls through to another meter.
+   */
+  private void actionNotificationNRS() {
+    if (mNotificationManager == null) {
+      mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+    }
+    Notification.Builder mBuilder = NotificationNrsReceiver.getNrsBuilder(this, -1);
+    mNotificationManager.notify(Constants.NOTIFY_NRS, mBuilder.build());
   }
 }

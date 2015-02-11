@@ -86,4 +86,9 @@
       android:title="@string/action_notification_vrs"
       android:orderInCategory="100"
       android:showAsAction="never" />
+  <item
+      android:id="@+id/action_notification_nrs"
+      android:title="@string/action_notification_nrs"
+      android:orderInCategory="100"
+      android:showAsAction="never" />
 </menu>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+  <TextView
+      android:id="@+id/prompt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Pain log: time to report!"
+      android:layout_centerHorizontal="true"
+      style="@android:style/TextAppearance.DeviceDefault.Medium.Inverse" />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/prompt"
+      android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/pain_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_0"
+        android:text="1"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_1"
+        android:text="2"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_2"
+        android:text="3"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_3"
+        android:text="4"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_4"
+        android:text="5"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_5"
+        android:text="6"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_6"
+        android:text="7"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_7"
+        android:text="8"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_8"
+        android:text="9"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+    <TextView
+        android:id="@+id/pain_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pain_9"
+        android:text="10"
+        android:padding="8dp"
+        style="@android:style/TextAppearance.DeviceDefault.Large.Inverse" />
+
+  </RelativeLayout>
+</RelativeLayout>

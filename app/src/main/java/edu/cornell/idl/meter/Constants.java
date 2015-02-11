@@ -15,4 +15,6 @@ public class Constants {
   static final String NOTIFY_ACTION_PAIN_VALUE = "notify_action_pain_value";
 
   static final int NOTIFY_VRS = 100;
+  static final int NOTIFY_NRS = 101;
+  static final int WAIT_TO_CANCEL_NOTIFICATION = 1000;
 }
