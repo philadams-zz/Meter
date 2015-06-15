@@ -1,1 +1,1 @@
-- TODO selected measure 3: NRSBig (magnifying animation?)
+Meter project.
